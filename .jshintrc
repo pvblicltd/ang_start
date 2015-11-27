@@ -40,6 +40,7 @@
     "by":         true,
     "element":    true,
     "$":          true,
-    "$$":         true
+    "$$":         true,
+    "_":          true
   }
 }
