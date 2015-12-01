@@ -3,9 +3,9 @@
 var gulp = require('gulp');
 
 // copies cpp-ui assets
-module.exports = function(){
+module.exports = function(config, log){
   gulp.task('copy-cppui-assets', function() {
-    return gulp.src('bower_components/cpp-ui/dist/assets/**/*')
+    return gulp.src(config.cppAssets)
       .pipe(gulp.dest('dist/assets'));
   });
 };

@@ -50,10 +50,13 @@
     "jquery": {
       "main": "./jquery.min.js"
     },
-    "angular-underscore":{
+    "angular-underscore": {
       "dependencies": {
         "underscore": "~1.8.3"
       }
     }
+  },
+  "devDependencies": {
+    "sinon": "~1.17.2"
   }
 }

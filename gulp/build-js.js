@@ -12,20 +12,13 @@ var ngApp         = 'cpp-ui-spa-master';
 // wraps concatenated angular modules in IIFE
 // [production] appends revision and compresses
 // copies to /dist
-module.exports = function(){
+module.exports = function(config, log){
   gulp.task('build-js-app', function() {
     return merge(
-      gulp.src([
-        'app/**/*.js',
-        'common/**/*.js',
-        '!app/config/*.js',
-        '!**/*.spec.js',
-        '!**/*.prot.js',
-        '!**/*.page.js'
-      ], {cwd: 'src'}),
+      gulp.src(config.allJsFilesApartFromTest, {cwd: 'src'}),
       merge(
-        gulp.src('src/app/**/*.html'),
-        gulp.src(bowerFiles('**/*.html'))
+        gulp.src(config.globs.templatesApp),
+        gulp.src(bowerFiles(config.allHtml))
       )
         .pipe($.minifyHtml())
         .pipe($.angularTemplatecache('templates.js', {module: ngApp}))
@@ -36,14 +29,14 @@ module.exports = function(){
       .pipe($.replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1\n'))
       .pipe($.wrap("(function(angular) {\n\n'use strict';\n<%= contents %>\n\n})(window.angular);"))
       .pipe(productionJs())
-      .pipe(gulp.dest('dist/scripts'));
+      .pipe(gulp.dest(config.distScripts));
   });
 
   gulp.task('build-js-vendor', function() {
-    return gulp.src(bowerFiles('**/*.js'))
+    return gulp.src(bowerFiles(config.bowerFiles))
       .pipe($.concat('vendor.js'))
       .pipe(productionJs())
-      .pipe(gulp.dest('dist/scripts'));
+      .pipe(gulp.dest(config.distScripts));
   });
 };
 

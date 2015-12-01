@@ -1,15 +1,14 @@
 'use strict';
 
-var gulp      = require('gulp');
-var rev       = require('gulp-rev');
-var rename    = require('gulp-rename');
+var gulp = require('gulp');
+var $    = require('gulp-load-plugins')({ lazy: true });
 
 // copies lang files into languages
-module.exports = function(){
+module.exports = function(config, log){
   gulp.task('copy-localisation', function() {
-    return gulp.src('src/app/**/*.lang.json')
-      .pipe(rename({dirname: ''}))
-      .pipe(gulp.dest('dist/languages'));
+    return gulp.src(config.allLangualgesFiles)
+      .pipe($.rename({dirname: ''}))
+      .pipe(gulp.dest(config.distLanguages));
   });
 };
 

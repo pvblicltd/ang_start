@@ -1,10 +1,10 @@
 'use strict';
 
-var del         = require('del');
-var gulp        = require('gulp');
+var del  = require('del');
+var gulp = require('gulp');
 
-module.exports = function(cb){
 // remove the /dist folder
+module.exports = function(cb){
   gulp.task('clean', function(cb) {
     del(['dist'], cb);
   });

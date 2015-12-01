@@ -1,15 +1,15 @@
 'use strict';
 
-var gulp        = require('gulp');
-var jshint      = require('gulp-jshint');
-var stylish     = require('jshint-stylish');
+var gulp    = require('gulp');
+var $       = require('gulp-load-plugins')({ lazy: true });
+var stylish = require('jshint-stylish');
 
 // lints javascript
-module.exports = function(){
+module.exports = function(config, log){
   gulp.task('jshint', function() {
-    return gulp.src('src/app/**/*.js')
-      .pipe(jshint())
-      .pipe(jshint.reporter(stylish));
+    return gulp.src(config.allAppJs)
+      .pipe($.jshint())
+      .pipe($.jshint.reporter(stylish));
   });
 
 };

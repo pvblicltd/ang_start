@@ -9,6 +9,6 @@
 
 	angular
 		.module('cpp-ui-spa-master.config.global', [])
-	  	.constant('ENV', 'development');
+    .constant('ENV', 'development');
 
 }());

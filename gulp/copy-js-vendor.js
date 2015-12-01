@@ -1,17 +1,16 @@
 'use strict';
 
 var gulp        = require('gulp');
-var connect     = require('gulp-connect');
 var merge       = require('merge-stream');
-var cached      = require('gulp-cached');
 var bowerFiles  = require('main-bower-files');
+var $           = require('gulp-load-plugins')({ lazy: true });
 
 // copies bower main javascript files to /dist
-module.exports = function(){
+module.exports = function(config){
   gulp.task('copy-js-vendor', function() {
-    return gulp.src(bowerFiles('**/*.js', {includeDev: true}), {base: 'bower_components'})
-      .pipe(cached())
-      .pipe(gulp.dest('dist/vendor'))
-      .pipe(connect.reload());
+    return gulp.src(bowerFiles(config.bowerFiles, {includeDev: true}), {base: 'bower_components'})
+      .pipe($.cached())
+      .pipe(gulp.dest(config.distVendor))
+      .pipe($.connect.reload());
   });
 };

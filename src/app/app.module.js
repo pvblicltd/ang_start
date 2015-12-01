@@ -4,6 +4,7 @@
     angular
         .module('cpp-ui-spa-master', [
             'cpp-ui-spa-master.config',
+            'cpp-ui-spa-master.case',
             'ui.bootstrap',
             'ui.bootstrap',
             'ui.cpp',

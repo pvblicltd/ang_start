@@ -1,28 +1,21 @@
 'use strict';
 
-var gulp      = require('gulp');
+var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 
 // watch files for changes and invokes respective tasks
-module.exports = function(){
+module.exports = function(config, log){
   gulp.task('watch', function() {
     gulp.watch('bower.json',  function() { runSequence(['copy-js-vendor', 'copy-fonts', 'copy-images'], 'build-index'); });
-    gulp.watch([
-      'src/**/*.js',
-      '!src/**/*.spec.js',
-      '!src/**/*.prot.js',
-      '!src/**/*.page.js'
-    ], function() { runSequence('copy-js-app', 'build-index', 'jshint'); });
+    gulp.watch(config.allJsButTest, function() { runSequence('copy-js-app', 'build-index', 'jshint'); });
+    gulp.watch(config.allTestFiles, function() { runSequence('test'); });
     gulp.watch('src/app/**/*.html', function() { runSequence('cache-templates', 'build-index'); });
+    gulp.watch(config.allLessFiles, ['build-css-app']);
     gulp.watch([
-      'src/**/*.less',
-      '!src/styles/vendor.less'
-    ], ['build-css-app']);
-    gulp.watch([
-      'src/styles/vendor.less'
+      config.vendorStyles
     ], ['build-css-vendor']);
-    gulp.watch('src/images/**', ['copy-images']);
-    gulp.watch(['src/index.html'], ['build-index']);
+    gulp.watch(config.imagesSrc, ['copy-images']);
+    gulp.watch([config.indexHtml], ['build-index']);
   });
 
 };

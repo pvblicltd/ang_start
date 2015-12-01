@@ -7,7 +7,7 @@ var gulp        = require('gulp');
 // from the javascript bundle
 module.exports = function(cb){
   gulp.task('copy-config', function() {
-    return gulp.src('src/app/config/config.js')
+    return gulp.src('src/app/config/*.js')
       .pipe(gulp.dest('dist/scripts'));
   });
 };

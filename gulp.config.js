@@ -5,15 +5,66 @@
   module.exports = function () {
 
     var root = './',
-      reports = './reports/',
-      src = './src/',
-      assets = src + 'assets/';
+        reports = './reports/',
+        src = './src/',
+        app = src + 'app/',
+        dist = './dist/',
+        assets = src + 'assets/';
 
-    //var wiredep = require('wiredep');
+    var wiredep = require('wiredep');
     var packageJson = require('./package.json');
 
     var config = {
-      build_dir: './dist/',
+      build_dir: dist,
+      build_destination: 'dist',
+      styles: 'src/assets/styles/app.less',
+      distStyles: './dist/styles',
+      vendorStyles: 'src/assets/styles/vendor.less',
+      imagesSrc: 'src/images/**',
+      bowerFiles: '**/*.js',
+      allLessFiles: [
+        'src/**/*.less',
+        '!src/styles/vendor.less'
+      ],
+      allJsButTest: [
+        'src/**/*.js',
+        '!src/**/*.spec.js',
+        '!src/**/*.prot.js',
+        '!src/**/*.page.js'
+      ],
+      allTestFiles: [
+        'src/**/*.spec.js',
+        'src/**/*.prot.js',
+        'src/**/*.page.js'
+      ],
+      allAppCss: '**/app*.css',
+      distScripts: 'dist/scripts',
+      distVendor: 'dist/vendor',
+      distLanguages: 'dist/languages',
+      allLangualgesFiles: 'src/app/**/*.lang.json',
+      allJs: ['app/**/*.js', 'external/**/*.js'],
+      allJsFilesApartFromTest: [
+        'app/**/*.js',
+        'external/**/*.js',
+        '!app/config/*.js',
+        '!**/*.spec.js',
+        '!**/*.prot.js',
+        '!**/*.page.js'
+      ],
+      distApp: dist + 'app',
+      allAppJs: 'src/app/**/*.js',
+      fontFiles: '**/*.{otf,eot,svg,ttf,woff,woff2}',
+      cppAssets: 'bower_components/cpp-ui/dist/assets/**/*',
+      bowerCss:'bower_components/**/*.css',
+      appProd: '**/app*.*',
+      indexHtml: 'src/index.html',
+      allHtml: '**/*.html',
+      vendorCss: '**/vendor*.css',
+      prodVendorJs: 'scripts/vendor*.js',
+      allConfigJs: 'src/app/config/*.js',
+      configJs: dist + '**/config.module.js',
+      allImagesFiles: '**/*.{png,jpg,jpeg,gif}',
+      distImages: 'dist/images',
       banner: '/*! Version ' + packageJson.version + ' - ' + new Date().toString() + ' */\n',
       version: packageJson.version,
       src_dir: src,
@@ -23,83 +74,63 @@
       tests_report_dir: reports + 'coverage/',
 
       globs: {
-        //js: [
-        //  src + '*.js',
-        //  src + 'main/**/*.js',
-        //  src + 'blocks/**/*.js',
-        //  src + 'sections/**/*.js',
-        //  src + 'shared/**/*.js',
-        //  src + 'config/**/*.js',
-        //  '!' + src + 'templates.*.js',
-        //  '!' + src + '**/*_test.js'
-        //],
+        js: [
+          src + '**/*.js',
+          '!' + src + '**/test/*'
+        ],
 
-        //templatesApp: ['./src/sections/**/*.html', './src/shared/**/*.html', './src/main/obt-app.html'],
+        templatesApp: ['./src/app/**/*.html'],
 
-        //translations: './src/translations/**/*',
-        sass: assets + 'sass/**/*.scss',
-        css: assets + 'css/**/*.*',
-        fonts: assets + 'fonts/**/*.*',
-        images: assets + 'images/**/*.*',
-        tests: ['./src/sections/**/*_test.js', './src/shared/**/*_test.js']
+        translations: './languages/*',
+        tests: [src + '**/test/*']
       },
 
       /*
        * Karma and test settings
        */
       karmaConf: __dirname + '/karma.conf.js',
-      karmaPlugins: ['karma-jasmine', 'karma-coverage', 'karma-phantomjs-launcher', 'karma-chrome-launcher', 'karma-junit-reporter'],
+      karmaPlugins: ['karma-jasmine', 'karma-coverage', 'karma-phantomjs-launcher', 'karma-chrome-launcher', 'karma-sinon', 'karma-junit-reporter'],
       karmaBowerDependencies: getKarmaBowerDependencies(),
-      commonBuild: [
-        'node_modules/common/build/launcher.min.js',
-        'node_modules/common/build/common.js',
-        'node_modules/common/build/common-angular1-4.js'
-      ],
       appFilesToTest: [
-        src + 'app.js',
-        src + 'config/**/*.module.js',
-        src + 'blocks/**/*.module.js',
-        src + 'sections/**/*.module.js',
-        src + 'blocks/**/*.js',
-        src + 'config/**/*.js',
-        src + 'shared/**/*.js',
-        src + 'sections/**/*.js',
-        src + 'templates.app.js'
+        app + 'app.module.js',
+        app + 'config/**/*.js',
+        app + 'components/**/*.js',
+        app + 'routes/**/*.js'
       ],
 
-      /*
-       * Browser sync serving paths
-       */
-      serve: {
-        dev: {
-          root: src,
-          port: 3008,
-          routes: {
-            '/common': "node_modules/common/build",
-            '/bower_components': 'bower_components',
-            '/express': 'src/translations',
-            '/apps/nbt': 'src'
-          },
-          index: 'index.app.html'
-        },
-        dist: {
-          root: 'build/app/',
-          port: 3008
-        },
-        prod: {
-          root: 'build/app/',
-          port: 3008
-        }
-      },
+      ///*
+      // * Browser sync serving paths
+      // */
+      //serve: {
+      //  dev: {
+      //    root: src,
+      //    port: 3008,
+      //    routes: {
+      //      '/common': "node_modules/common/build",
+      //      '/bower_components': 'bower_components',
+      //      '/express': 'src/translations',
+      //      '/apps/nbt': 'src'
+      //    },
+      //    index: 'index.app.html'
+      //  },
+      //  dist: {
+      //    root: 'build/app/',
+      //    port: 3008
+      //  },
+      //  prod: {
+      //    root: 'build/app/',
+      //    port: 3008
+      //  }
+      //},
 
-      browserReloadDelay: 1000,
+      browserReloadDelay: 1000
 
       /*
        * Node settings
        */
-      defaultPort: 3005,
-      serverFiles: 'mock',
-      swaggerServer: 'mock/server.js'
+      //defaultPort: 3005,
+      //serverFiles: 'mock',
+      //swaggerServer: 'mock/server.js'
     };
 
     config.karma = getKarmaOptions();
@@ -110,38 +141,32 @@
 
     function getKarmaBowerDependencies() {
 
-      //return wiredep({
-      //  devDependencies: true,
-      //  dependencies: true,
-      //  exclude: [/angular\//] // this already included in common so exclude to prevent double loading
-      //})['js'];
+      return wiredep({
+        devDependencies: true,
+        dependencies: true
+      })['js'];
     }
 
     function getKarmaOptions() {
-      //var options = {
-      //  files: [].concat(
-      //    config.commonBuild, // common build files
-      //    config.karmaBowerDependencies, // karma dependencies i.e. angular mocks
-      //    config.appFilesToTest // app modules and files to test
-      //  ),
-      //  coverage: {
-      //    dir: config.tests_report_dir,
-      //    reporters: [ // types of reporters to use
-      //      {type: 'html', subdir: 'report-html'}, // report in browser
-      //      {type: 'lcov', subdir: 'report-lcov'}, // for jenkin reading
-      //      {type: 'text-summary'} // output to the console
-      //    ]
-      //  },
-      //  preprocessors: {
-      //    './src/main/**/!(*_test)+(.js)': 'coverage',
-      //    './src/blocks/**/!(*_test)+(.js)': 'coverage',
-      //    './src/sections/**/!(*_test)+(.js)': 'coverage',
-      //    './src/shared/**/!(*_test)+(.js)': 'coverage',
-      //    './src/config/**/!(*_test)+(.js)': 'coverage'
-      //  }
-      //};
+      var options = {
+        files: [].concat(
+          config.karmaBowerDependencies, // karma dependencies i.e. angular mocks
+          config.appFilesToTest // app modules and files to test
+        ),
+        coverage: {
+          dir: config.tests_report_dir,
+          reporters: [ // types of reporters to use
+            {type: 'html', subdir: 'report-html'}, // report in browser
+            {type: 'lcov', subdir: 'report-lcov'}, // for jenkin reading
+            {type: 'text-summary'} // output to the console
+          ]
+        },
+        preprocessors: {
+          'src/**/!(test)/*.js': ['coverage']
+        }
+      };
 
-      //return options;
+      return options;
     }
   };
 }());

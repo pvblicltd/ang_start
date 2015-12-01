@@ -7,6 +7,6 @@ var gulp        = require('gulp');
 // this is used by deployment builds
 module.exports = function(cb){
   gulp.task('clean-config', function(cb) {
-    del(['dist/**/config.js'], cb);
+    del(['dist/**/config.module.js'], cb);
   });
 };

@@ -1,22 +1,21 @@
 'use strict';
 
 var gulp        = require('gulp');
-var connect     = require('gulp-connect');
+var $           = require('gulp-load-plugins')({ lazy: true });
 var merge       = require('merge-stream');
 var bowerFiles  = require('main-bower-files');
-var cached      = require('gulp-cached');
 
 // minifies images in production builds
 // copies images to /dist
-module.exports = function(){
+module.exports = function(config, log){
   gulp.task('copy-images', function() {
     return merge(
       gulp.src('src/images/**'),
-      gulp.src(bowerFiles('**/*.{png,jpg,jpeg,gif}'))
+      gulp.src(bowerFiles(config.allImagesFiles))
     )
-      .pipe(cached('images'))
+      .pipe($.cached('images'))
 //    .pipe(gulpif(gutil.env.production, imagemin()))
-      .pipe(gulp.dest('dist/images'))
-      .pipe(connect.reload());
+      .pipe(gulp.dest(config.distImages))
+      .pipe($.connect.reload());
   });
 };

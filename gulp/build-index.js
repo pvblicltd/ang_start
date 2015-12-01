@@ -1,63 +1,57 @@
 'use strict';
 
 var gulp        = require('gulp');
-var connect     = require('gulp-connect');
-var ngFilesort  = require('gulp-angular-filesort');
-var gutil       = require('gulp-util');
-var inject      = require('gulp-inject');
 var bowerFiles  = require('main-bower-files');
-var gulpif      = require('gulp-if');
-var minifyHtml  = require('gulp-minify-html');
 var merge       = require('merge-stream');
-var plumber     = require('gulp-plumber');
+var $           = require('gulp-load-plugins')({ lazy: true });
 
-// injects links for js/css files into dist/index.html
-module.exports = function(){
+// $.injects links for js/css files into dist/index.html
+module.exports = function(config, log){
   gulp.task('build-index', function() {
-    var app, dist = {read: false, cwd: 'dist'};
-    if(gutil.env.production) {
-      app = gulp.src('**/app*.*', dist);
+    var app, dist = {read: false, cwd: config.build_destination};
+    if($.util.env.production) {
+      app = gulp.src(config.appProd, dist);
     } else {
       app = merge(
-        gulp.src('**/app*.css', dist),
-        gulp.src(['app/**/*.js', 'common/**/*.js'], {cwd: 'dist'})
-          .pipe(plumber())
-          .pipe(ngFilesort())
+        gulp.src(config.allAppCss, dist),
+        gulp.src(config.allJs, {cwd: config.build_destination})
+          .pipe($.plumber())
+          .pipe($.angularFilesort())
       );
     }
-    return gulp.src('src/index.html')
+    return gulp.src(config.indexHtml)
       // [production, development] vendor styles
-      .pipe(inject(
-        gulp.src('**/vendor*.css', dist), {
+      .pipe($.inject(
+        gulp.src(config.vendorCss, dist), {
           addRootSlash: false,
           name:        'vendor'
         }
       ))
       // [development] vendor scripts - references bowerFiles() in order to establish file order
-      .pipe(gulpif(!gutil.env.production, inject(
-        gulp.src(bowerFiles('**/*.js'), {read: false, cwd: 'bower_components'}), {
+      .pipe($.if(!$.util.env.production, $.inject(
+        gulp.src(bowerFiles(config.bowerFiles), {read: false, cwd: 'bower_components'}), {
           addRootSlash: false,
           name:        'vendor',
           addPrefix:   'vendor'
         }
       )))
       // [production] vendor scripts
-      .pipe(gulpif(gutil.env.production, inject(
-        gulp.src('scripts/vendor*.js', dist), {
+      .pipe($.if($.util.env.production, $.inject(
+        gulp.src(config.prodVendorJs, dist), {
           name: 'vendor',
           addRootSlash: false
         }
       )))
       // [development, production] app scripts/styles
-      .pipe(inject(
+      .pipe($.inject(
         app, {
           name: 'app',
           addRootSlash: false
         }
       ))
       // [production] config.js - a timestamp revision is appended to cache bust
-      .pipe(gulpif(gutil.env.production, inject(
-        gulp.src('**/*.config.js', dist), {
+      .pipe($.if($.util.env.production, $.inject(
+        gulp.src(config.allConfigJs, dist), {
           name: 'config',
           addRootSlash: false,
           transform: function(filepath) {
@@ -66,8 +60,8 @@ module.exports = function(){
           }
         }
       )))
-      .pipe(gulpif(gutil.env.production, minifyHtml({conditionals: true})))
-      .pipe(gulp.dest('dist'))
-      .pipe(connect.reload());
+      .pipe($.if($.util.env.production, $.minifyHtml({conditionals: true})))
+      .pipe(gulp.dest(config.build_destination))
+      .pipe($.connect.reload());
   });
 };
