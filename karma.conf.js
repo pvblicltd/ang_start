@@ -38,7 +38,7 @@ module.exports = function (config) {
     },
 
     junitReporter : {
-      outputDir: 'test-reports',
+      outputDir: gulpConfig.reports,
       suite: 'ccs'
     },
 
