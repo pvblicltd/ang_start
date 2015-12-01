@@ -1,71 +1,70 @@
 // Karma configuration
-// Generated on Thu Nov 20 2014 20:21:04 GMT+0100 (West-Europa (standaardtijd))
+// http://karma-runner.github.io/0.12/config/configuration-file.html
+// Generated on 2015-03-02 using
+// generator-karma 0.9.0
 
-module.exports = function (config) {
+module.exports = function(config) {
+  'use strict';
 
-    'use strict';
+  config.set({
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: true,
 
-    var gulpConfig = require('./gulp.config')();
+    // base path, that will be used to resolve files and exclude
+    basePath: '../',
 
-    config.set({
+    // testing framework to use (jasmine/mocha/qunit/...)
+    frameworks: ['jasmine', 'sinon'],
 
-        // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+    // list of files / patterns to load in the browser
+    files: ['bower_components/jquery/dist/jquery.js'],
 
-        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jasmine','sinon'],
+    //// list of files / patterns to exclude
+    //exclude: [
+    //'app/scripts/metronic.js',
+    //'app/scripts/layout.js'
+    //],
 
-        // need for the reporter to work or not
-        plugins: gulpConfig.karmaPlugins,
+    // web server port
+    port: 8080,
 
-        files: gulpConfig.karma.files,
+    // Start these browsers, currently available:
+    // - Chrome
+    // - ChromeCanary
+    // - Firefox
+    // - Opera
+    // - Safari (only Mac)
+    // - PhantomJS
+    // - IE (only Windows)
+    browsers: [
+      'PhantomJS'
+    ],
 
-        // list of files to exclude
-        exclude: [],
+    reporters: ['progress', 'coverage'],
+    preprocessors: {
+      'src/**/!(test)/*.js': ['coverage']
+    },
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage'
+    },
 
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: gulpConfig.karma.preprocessors,
-       
-        // test results reporter to use
-        // possible values: 'dots', 'progress'
-        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage', 'junit'],
+    // Which plugins to enable
+    plugins: [
+      'karma-jasmine',
+      'karma-phantomjs-launcher',
+      'karma-sinon',
+      'karma-coverage'
+    ],
 
-        coverageReporter: {
-            dir: gulpConfig.karma.coverage.dir,
-            reporters: gulpConfig.karma.coverage.reporters
-        },
+    // Continuous Integration mode
+    // if true, it capture browsers, run tests and exit
+    singleRun: false,
 
-        junitReporter : {
-            outputDir: 'reports',
-            suite: 'ccs'
-        },
+    colors: true,
 
-        // web server port
-        port: 9876,
-
-        // enable / disable colors in the output (reporters and logs)
-        colors: true,
-
-        /* jshint -W101 */
-        // level of logging
-        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_INFO,
-
-        // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
-
-        autoWatchBatchDelay: 2000,
-
-        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        //browsers: ['Chrome'],
-        browsers: ['PhantomJS'],
-
-        // Continuous Integration mode
-        // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
-
-        browserNoActivityTimeout: 100000
-    });
+    // level of logging
+    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
+    logLevel: config.LOG_INFO,
+  });
 };
