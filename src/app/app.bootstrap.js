@@ -11,7 +11,7 @@
       angular.module('cpp-ui-spa-master').value('globalConfig', response.data);
     }, function(errorResponse) {
       // Handle error case
-      console.log('Error on bootstraping:', errorResponse);
+      console.log('Error on bootstrapping:', errorResponse);
     });
   }
 
