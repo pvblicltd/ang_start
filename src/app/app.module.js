@@ -3,13 +3,13 @@
 
     angular
         .module('cpp-ui-spa-master', [
+            'ui.router',
             'cpp-ui-spa-master.config',
             'cpp-ui-spa-master.case',
             'cpp-ui-spa-master.routes',
             'ui.bootstrap',
             'ui.cpp',
             'angularUtils.directives.dirPagination',
-            'ui.router',
             'ngAnimate',
             'ngSanitize',
             'ngLocalize',

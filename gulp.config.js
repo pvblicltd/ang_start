@@ -33,9 +33,7 @@
         '!src/**/*.page.js'
       ],
       allTestFiles: [
-        'src/**/*.spec.js',
-        'src/**/*.prot.js',
-        'src/**/*.page.js'
+        'src/**/*.spec.js'
       ],
       allAppCss: '**/app*.css',
       distScripts: 'dist/scripts',
@@ -93,9 +91,10 @@
       karmaBowerDependencies: getKarmaBowerDependencies(),
       appFilesToTest: [
         app + 'app.module.js',
-        app + 'config/**/*.js',
-        app + 'components/**/*.js',
-        app + 'routes/**/*.js'
+        app + 'routes/routes.module.js',
+        app + 'routes/index/index.module.js',
+        app + 'components/**/*.spec.js',
+        app + 'routes/**/*.spec.js'
       ],
 
       ///*

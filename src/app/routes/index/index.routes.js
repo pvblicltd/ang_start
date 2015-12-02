@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('cpp-ui-spa-master.routes.index',['ui.router'])
+    .module('cpp-ui-spa-master.routes.index')
     .config(index);
 
   function index($stateProvider){

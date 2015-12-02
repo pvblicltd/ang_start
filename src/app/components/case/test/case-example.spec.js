@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  describe('test case', function(){
+  describe('case', function(){
       beforeEach(module('cpp-ui-spa-master.case.example'));
 
       it('Should ', function(){

@@ -3,8 +3,7 @@
 
   angular
     .module('cpp-ui-spa-master.routes', [
-      'cpp-ui-spa-master.routes.index',
-      'ui.router'
+      'cpp-ui-spa-master.routes.index'
     ])
     .config(routes);
 
