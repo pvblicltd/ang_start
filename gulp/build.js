@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp      = require('gulp');
+var gulp        = require('gulp');
 var runSequence = require('run-sequence');
 var gutil       = require('gulp-util');
 
@@ -27,6 +27,7 @@ module.exports = function(){
         'build-css-vendor',
         'cache-templates',
         'copy-js-vendor',
+        'copy-config',
         'copy-fonts',
         'copy-html',
         'copy-favicon',

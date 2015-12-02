@@ -46,7 +46,7 @@
       allJsFilesApartFromTest: [
         'app/**/*.js',
         'external/**/*.js',
-        '!app/config/*.js',
+        'app/config/*.js',
         '!**/*.spec.js',
         '!**/*.prot.js',
         '!**/*.page.js'

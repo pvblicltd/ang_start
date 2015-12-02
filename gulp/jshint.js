@@ -8,6 +8,9 @@ var stylish = require('jshint-stylish');
 module.exports = function(config, log){
   gulp.task('jshint', function() {
     return gulp.src(config.allAppJs)
+      .pipe($.arialinter({
+        level: 'AA'
+      }))
       .pipe($.jshint())
       .pipe($.jshint.reporter(stylish));
   });

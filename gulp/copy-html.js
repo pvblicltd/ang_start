@@ -9,6 +9,7 @@ var $           = require('gulp-load-plugins')({ lazy: true });
 module.exports = function(config){
   gulp.task('copy-html', function() {
     return gulp.src([config.src_dir + '*.html', '!' + config.src_dir + 'index.html'])
+      .pipe($.angularHtmlify())
       .pipe($.if($.util.env.production, $.minifyHtml()))
       .pipe(gulp.dest(config.build_destination))
       .pipe($.connect.reload());

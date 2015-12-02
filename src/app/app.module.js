@@ -5,7 +5,7 @@
         .module('cpp-ui-spa-master', [
             'cpp-ui-spa-master.config',
             'cpp-ui-spa-master.case',
-            'ui.bootstrap',
+            'cpp-ui-spa-master.routes',
             'ui.bootstrap',
             'ui.cpp',
             'angularUtils.directives.dirPagination',
@@ -21,9 +21,10 @@
             'angular-ladda',
             'angular-underscore'
         ])
-        .run(runBlock);
+        .run(runBlock)
+        .value('globalConfig', {});
 
-    function runBlock($rootScope, locale) {
+    function runBlock($rootScope, $state, locale) {
       $rootScope.langs = [{
         value: 'en-GB',
         label: 'English'
@@ -31,6 +32,10 @@
         value: 'cy',
         label: 'Cymraeg'
       }];
+
+      if(locale.getLocale() === 'en-US'){
+        locale.setLocale('en-GB');
+      }
 
       // Language Select Function
       $rootScope.selectedLanguage = $rootScope.langs[_.findIndex($rootScope.langs, {value: locale.getLocale()})];
@@ -46,6 +51,14 @@
           ref: '#'
         }
       };
+
+      $rootScope.$on('$stateChangePermissionDenied', function() {
+        // so far if no valid permissions we send them to the home page
+        if (!$rootScope.waitingForCallback)
+        {
+          $state.go('index');
+        }
+      });
 
     }
 
