@@ -6,7 +6,6 @@
             'cpp-ui-spa-master.config',
             'cpp-ui-spa-master.case',
             'ui.bootstrap',
-            'ui.bootstrap',
             'ui.cpp',
             'angularUtils.directives.dirPagination',
             'ui.router',
