@@ -1,8 +1,11 @@
 (function () {
     'use strict';
-    
+
     angular
-        .module('cpp-ui-spa-master.config.locale', [])
+        .module('cpp-ui-spa-master.config.locale', [
+          'ngLocalize',
+          'ngLocalize.Config'
+        ])
         .value('localeConf', {
             basePath: 'languages',
             defaultLocale: 'en-GB',

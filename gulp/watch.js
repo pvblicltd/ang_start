@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp        = require('gulp');
+var gulp      = require('gulp');
 var runSequence = require('run-sequence');
 
 // watch files for changes and invokes respective tasks
