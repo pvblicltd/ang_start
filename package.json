@@ -31,7 +31,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
     "gulp-rev": "^4.0.0",
-    "gulp-sass": "^2.0.1",
     "gulp-task-listing": "^1.0.1",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.4",
@@ -61,6 +60,11 @@
     "yargs": "^3.30.0"
   },
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "postinstall": "bower install"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1",
+    "path": "^0.12.7"
   }
 }
