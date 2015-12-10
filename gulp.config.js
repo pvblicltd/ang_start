@@ -41,7 +41,7 @@
             distVendor: 'dist/vendor',
             distLanguages: 'dist/languages',
             allLangualgesFiles: 'src/app/**/*.lang.json',
-            allJs: ['app/**/*.js', 'external/**/*.js'],
+            allJs: ['app/**/*.js', 'external/**/*.js', '!app/**/*.controller.js'],
             allJsFilesApartFromTest: [
               'app/**/*.js',
               'external/**/*.js',

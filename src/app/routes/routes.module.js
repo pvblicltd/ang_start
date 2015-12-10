@@ -2,9 +2,7 @@
   'use strict';
 
   angular
-    .module('cpp-ui-spa-master.routes', [
-      'cpp-ui-spa-master.routes.index'
-    ])
+    .module('cpp-ui-spa-master.routes', [])
     .config(routes);
 
   function routes($urlRouterProvider, $locationProvider){
