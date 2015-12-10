@@ -4,6 +4,7 @@
     angular
         .module('cpp-ui-spa-master', [
             'ui.router',
+            'oc.lazyLoad',
             'cpp-ui-spa-master.config',
             'cpp-ui-spa-master.case',
             'cpp-ui-spa-master.routes',
@@ -21,10 +22,16 @@
             'angular-ladda',
             'angular-underscore'
         ])
-        .run(runBlock)
-        .value('globalConfig', {});
+        .value('globalConfig', {})
+        .value('routesConfig', [])
+        .run(runBlock);
 
-    function runBlock($rootScope, $state, locale) {
+    function runBlock($rootScope, $state, locale, routesConfig, dynamicStateProvider) {
+
+      _.each(routesConfig, function(state){
+        dynamicStateProvider.addState(state);
+      });
+
       $rootScope.langs = [{
         value: 'en-GB',
         label: 'English'
@@ -56,7 +63,7 @@
         // so far if no valid permissions we send them to the home page
         if (!$rootScope.waitingForCallback)
         {
-          $state.go('index');
+          //$state.go('index');
         }
       });
 
