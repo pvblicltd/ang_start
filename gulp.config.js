@@ -142,7 +142,7 @@
 
       return wiredep({
         devDependencies: true,
-        dependencies: true
+        dependencies: false
       })['js'];
     }
 
