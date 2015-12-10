@@ -4,6 +4,7 @@
     angular
         .module('cpp-ui-spa-master', [
             'ui.router',
+            'oc.lazyLoad',
             'cpp-ui-spa-master.config',
             'cpp-ui-spa-master.case',
             'cpp-ui-spa-master.routes',

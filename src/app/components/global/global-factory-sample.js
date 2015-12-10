@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('cpp-ui-master.global.factorySample')
+    .module('cpp-ui-spa-master.global.factorySample',[])
     .factory('factorySample', factorySample);
 
   /* @ngInject */

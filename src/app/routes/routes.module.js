@@ -3,7 +3,8 @@
 
   angular
     .module('cpp-ui-spa-master.routes', [
-      'cpp-ui-spa-master.routes.index'
+      'cpp-ui-spa-master.routes.index',
+      'cpp-ui-spa-master.routes.lazy'
     ])
     .config(routes);
 
