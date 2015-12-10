@@ -1,0 +1,44 @@
+#%RAML 0.8
+title: Scheduling - CST write services API
+version: 1.0
+baseUri: http://localhost:8888/ccs-cst-write/rest/{version}/cst
+mediaType: appplication/json
+protocols: [ HTTP, HTTPS ]
+
+traits:
+  - response202: !include traits/202-response.yaml
+  - response400: !include traits/400-response.yaml
+  - response500: !include traits/500-response.yaml    
+  - responseHeaders: !include traits/moj-response-headers.yaml
+  - secured : !include traits/moj-request-headers.yaml
+      
+documentation: 
+  - title: Category
+    content : Consumer Services Tier
+  - title: Description
+    content:
+       API Documentation for Scheduling CST services.
+          
+
+/hearing:
+  displayName: Services pertaining to Hearing.
+  post:
+      description:  Create a Hearing.
+      body:
+        application/json:
+            example: !include json-examples/hearing.json             
+            schema: !include json-schemas/create-hearing-command.json
+              
+      responses:
+            500:
+                description: Internal Server Error
+            401:
+                description: Unauthorized. Invalid user or session.                    
+            202:
+                description: OK        
+                body:
+                  application/json: 
+                      example: |
+                        {
+                          success: "true"
+                        }

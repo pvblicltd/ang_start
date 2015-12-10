@@ -1,0 +1,14 @@
+{
+  "id": "19",
+  "version": 12,
+  "directions": [
+    {
+      "id": "DIR-123",
+      "status": "ISSUED"
+    },
+    {
+      "id": "DIR-124",
+      "status": "ISSUED"
+    }
+  ]
+}

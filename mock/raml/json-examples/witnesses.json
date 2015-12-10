@@ -1,0 +1,15 @@
+[
+  {
+      "id" : "7e2f843e-d639-40b3-8611-8015f3a18958",
+      "personId": "7e2f843e-d639-40b3-8611-8015f3a18958",
+      "policePersonId": "policePersonId", 
+      "statements": [ "id5", "id6" ],
+      "classification" : {
+      			"isVictim":true,
+      			"isEntitlementRequired":true,
+      			"witnessExpertise":"EXPERT",
+      			"witnessStatus":"INTIMIDATED"
+      			}
+  }
+]
+

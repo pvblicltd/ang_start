@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "chargingCase": {
+      "id": "chargingCase",
+      "type": "array",
+      "items": [
+        {
+          "id": "0",
+          "type": "object",
+          "properties": {
+            "caseId": {
+              "id": "caseId",
+              "type": "integer",
+              "enum": [
+                null,
+                2
+              ]
+            },
+            "urn": {
+              "id": "urn",
+              "type": "string",
+              "enum": [
+                null,
+                "#1001"
+              ]
+            }
+          },
+          "required": [
+            "caseId",
+            "urn"
+          ]
+        },
+        {
+          "id": "1",
+          "type": "object",
+          "properties": {
+            "caseId": {
+              "id": "caseId",
+              "type": "integer",
+              "enum": [
+                null,
+                2
+              ]
+            },
+            "urn": {
+              "id": "urn",
+              "type": "string",
+              "enum": [
+                null,
+                "#1002"
+              ]
+            }
+          }
+        },
+        {
+          "id": "2",
+          "type": "object",
+          "properties": {
+            "caseId": {
+              "id": "caseId",
+              "type": "integer",
+              "enum": [
+                null,
+                3
+              ]
+            },
+            "urn": {
+              "id": "urn",
+              "type": "string",
+              "enum": [
+                null,
+                "#1003"
+              ]
+            }
+          }
+        }
+      ],
+      "required": [
+        "0",
+        "1",
+        "2"
+      ]
+    }
+  },
+  "required": [
+    "chargingCase"
+  ]
+}

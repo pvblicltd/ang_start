@@ -1,0 +1,32 @@
+
+
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "victim": {
+      "id": "/victim",
+      "type": "boolean"
+    },
+    "entitlementRequired": {
+      "id": "/entitlementRequired",
+      "type": "boolean"
+    },
+    "witnessExpertise": {
+      "id": "/witnessExpertise",
+      "type": "string"
+    },
+    "witnessStatus": {
+      "id": "/witnessStatus",
+      "type": "string"
+    }
+  },
+  "required": [
+    "victim",
+    "entitlementRequired",
+    "witnessExpertise",
+    "witnessStatus"
+  ]
+}
+

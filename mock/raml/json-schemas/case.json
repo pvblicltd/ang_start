@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "urn": {
+      "id": "/urn",
+      "type": "string"
+    },
+    "policeOfficerInCase": {
+      "id": "/policeOfficerInCase",
+      "type": "object",
+      "properties": {
+        "personId": {
+          "id": "/policeOfficerInCase/personId",
+          "type": "string"
+        },
+        "rank": {
+          "id": "/policeOfficerInCase/rank",
+          "type": "string"
+        },
+        "narrative": {
+          "id": "/policeOfficerInCase/narrative",
+          "type": "string"
+        },
+        "badgeNumber": {
+          "id": "/policeOfficerInCase/badgeNumber",
+          "type": "integer"
+        }
+      }
+    },
+    "policeSupervisor": {
+      "id": "/policeSupervisor",
+      "type": "object",
+      "properties": {
+        "personId": {
+          "id": "/policeSupervisor/personId",
+          "type": "string"
+        },
+        "rank": {
+          "id": "/policeSupervisor/rank",
+          "type": "string"
+        },
+        "narrative": {
+          "id": "/policeSupervisor/narrative",
+          "type": "string"
+        },
+        "badgeNumber": {
+          "id": "/policeSupervisor/badgeNumber",
+          "type": "integer"
+        }
+      }
+    },
+    "witnesses": {
+      "id": "/witnesses",
+      "type": "array",
+      "items": {
+        "id": "/witnesses/0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "/witnesses/0/id",
+            "type": "string"
+          },
+          "personId": {
+            "id": "/witnesses/0/personId",
+            "type": "string"
+          },
+          "isVictim": {
+            "id": "/witnesses/0/isVictim",
+            "type": "boolean"
+          },
+          "statements": {
+            "id": "/witnesses/0/statements",
+            "type": "array",
+            "items": [
+              {
+                "id": "/witnesses/0/statements/0",
+                "type": "string"
+              },
+              {
+                "id": "/witnesses/0/statements/1",
+                "type": "string"
+              },
+              {
+                "id": "/witnesses/0/statements/2",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "urn",
+    "policeOfficerInCase",
+    "policeSupervisor",
+    "witnesses"
+  ]
+}
+

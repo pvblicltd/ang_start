@@ -1,0 +1,117 @@
+#%RAML 0.8
+title: Pre-Charge & Charge - CST write service API
+version: v1
+mediaType: application/json
+protocols: [ HTTP ]
+documentation:
+        - title:  Overview of CST write services
+          content: List of all CST write services
+
+baseUri: /pcc-cst-write/rest/v1/cst
+
+/charging-case:
+  description: Create Charging Case
+  post:
+    description: Create Charging Case
+
+    body:
+        application/json:
+           example:
+            !include json-examples/charging_case.json
+           schema:
+            !include json-schemas/charging_case_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            200:
+                description: OK
+
+
+/put-charges:
+  description: Put charges
+  post:
+    description: Put charges
+
+    body:
+        application/json:
+           example:
+            !include json-examples/put_charges.json
+           schema:
+            !include json-schemas/put_charges_Schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            200:
+                description: OK
+
+/auth-charge:
+  description: Authorise charges for a case review by it's mandatory fields
+  post:
+    description: Authorise charges
+
+    body:
+        application/json:
+           example:
+            !include json-examples/charging_case_review_authorise_charge.json
+           schema:
+            !include json-schemas/charging_case_review_authorise_charge_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            200:
+                description: OK
+
+/start-review:
+  description: Start a charging case review
+  post:
+    description: Starts a charging case review
+
+    body:
+        application/json:
+           example:
+            !include json-examples/charging_case_review_start.json
+           schema:
+            !include json-schemas/charging_case_review_start_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            200:
+                description: OK
+
+
+/complete-review:
+  description: Completes a case review by it's mandatory fields
+  post:
+    description: Completes review
+
+    body:
+        application/json:
+           example:
+            !include json-examples/charging_case_review_complete.json
+           schema:
+            !include json-schemas/charging_case_review_complete_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            200:
+                description: OK
+
+
+/recorded-charging-decision:
+
+  description: Recorded Charging Decision for a case review by it's mandatory fields
+  post:
+    description: Recorded Charging Decision
+
+    body:
+        application/json:
+           example:
+            !include json-examples/recorded_charging_decision.json
+           schema:
+            !include json-schemas/recorded_charging_decision_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            200:
+                description: OK
+

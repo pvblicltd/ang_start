@@ -22,7 +22,6 @@
             vendorStyles: 'src/assets/styles/vendor.less',
             imagesSrc: 'src/images/**',
             bowerFiles: '**/*.js',
-            raml: root + 'raml/',
             allLessFiles: [
               'src/**/*.less',
               '!src/styles/vendor.less'
@@ -123,14 +122,15 @@
             //  }
             //},
 
-            browserReloadDelay: 1000
+            browserReloadDelay: 1000,
 
             /*
              * Node settings
              */
-            //defaultPort: 3005,
-            //serverFiles: 'mock',
-            //swaggerServer: 'mock/server.js'
+            defaultPort: 8888,
+            serverFiles: 'mock',
+            ramlServer: 'mock/server.js',
+            raml: 'mock/raml/'
         };
 
         config.karma = getKarmaOptions();

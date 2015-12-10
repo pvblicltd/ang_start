@@ -1,0 +1,74 @@
+{
+  "urn": "T21098",
+  "aggregateCaseId": "19",
+  "version": 12,
+  "eventId": "983129",
+  "directions": [
+    {
+      "title": "Expert evidence",
+      "statutoryReference": "Criminal Procedure Rules, rr.3.3, 3.9",
+      "instructions": [
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+          "timeLimit": "28 days",
+		      "timeLimitNote": "Not prescribed by rules or other legislation",
+          "assignee": "Defence"
+        },
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+		      "timeLimit": "-",
+		      "timeLimitNote": "",
+          "assignee": "Defence"
+        }
+      ]
+    },
+    {
+      "title": "More Expert evidence",
+      "statutoryReference": "Criminal Procedure Rules, rr.3.3, 3.9",
+      "instructions": [
+        {
+		  "id": "DIR-122",
+          "description": "If either party relies on expert evidence, the directions below apply.",
+          "subInstructions": [
+            {
+              "id": "DIR-123",
+              "description": "respond to court within one week",
+		          "timeLimit": "28 days",
+		          "timeLimitNote": "Not prescribed by rules or other legislation",
+              "assignee": "Defence & Prosecution"
+            },
+            {
+              "id": "DIR-123",
+              "description": "respond to court within one week",
+			        "timeLimit": "28 days",
+		          "timeLimitNote": "Not prescribed by rules or other legislation",
+              "assignee": "Defence & Prosecution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Expert evidence",
+      "statutoryReference": "Criminal Procedure Rules, rr.3.3, 3.9",
+      "instructions": [
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+		      "timeLimit": "28 days",
+		      "timeLimitNote": "Not prescribed by rules or other legislation",
+          "assignee": "Defence"
+        },
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+		      "timeLimit": "28 days",
+		      "timeLimitNote": "Not prescribed by rules or other legislation",
+          "assignee": "Defence"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The review id",
+      "type": "string"
+    },
+    "version": {
+      "id": "version",
+      "type": "integer"
+    },
+    "recordChargingDecision": {
+      "description": "Record Charging Decision",
+      "type": "array",
+      "items": {
+        "id": "recordChargingDecision",
+        "type": "object",
+        "properties": {
+          "suspectId": {
+            "description": "The suspect ID",
+            "type": "long"
+          },
+          "chargingDecision": {
+            "id": "chargingDecision",
+            "type": "object",
+            "properties": {
+              "decision": {
+                "id": "decision",
+                "type": "string"
+              },
+              "authorisedCharges": {
+                "id": "authorisedCharges",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "description": "The charge code",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "The charge description",
+                      "type": "string"
+                    },
+                    "anticipatedPlea": {
+                      "description": "The anticipated pea",
+                      "type": "string"
+                    },
+                    "anticipatedIssue": {
+                      "description": "The anticipated issue",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "recordChargingDecision",
+    "version"
+  ]
+}
+
+

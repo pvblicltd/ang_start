@@ -1,0 +1,88 @@
+{
+  "caseId": "55DP0028115",
+  "urn": "44MR2287115",
+  "suspects": [
+    {
+      "charges": [
+        {
+          "code": "CJ88116",
+          "description": "Assault by beating",
+          "type": "authorised"
+        }
+      ],
+      "firstName": "Gregory Colin",
+      "lastName": "HAMPSON",
+      "dob": "1996-10-17",
+      "address": "9 Privet Drive",
+      "id": 3
+    }
+  ],
+  "exhibits": [
+    {
+      "used": true,
+      "ID": 5,
+      "reference": "121212"
+    },
+    {
+      "used": true,
+      "ID": 4,
+      "reference": "121213"
+    }
+  ],
+  "policeNarrative": {
+    "Summary of the Key Evidence": [
+      "State value of property stolen or damaged (or recovered). See Sec 9 for recording compensation details):  N/A",
+      "State value of property stolen or damaged (or recovered). See Sec 9 for recording compensation details):  N/A",
+      "Pc 74628 Eddison: Arrested the defendant for the assault on victim Henshall and witnessed as the defendant kicked out at her.",
+      "Pc 74628 Eddison: Arrested the defendant for the assault on victim Henshall and witnessed as the defendant kicked out at her.",
+      "Pc 74886 Wilmot: Assisted in the arrest of the defendant, witnessed the defendant kick victim Henshall.",
+      "Pc 74886 Wilmot: Assisted in the arrest of the defendant, witnessed the defendant kick victim Henshall.",
+      "Sarah Henshall: Victim of domestic assault.",
+      "Sarah Henshall: Victim of domestic assault.",
+      "Key witness(es) and their role (e.g. eye witness, person providing identity).:",
+      "Key witness(es) and their role (e.g. eye witness, person providing identity).:",
+      "The defendant is conveyed to Williamstown police station and his detention authorised.",
+      "The defendant is conveyed to Williamstown police station and his detention authorised.",
+      "While being escorted away by Pc Wilmot and Pc Eddison the defendant kicks out at Henshall in the hallway, making contact with her groin causing her to bend over in pain. Both Pc Wilmot and Pc Eddison witness this.",
+      "While being escorted away by Pc Wilmot and Pc Eddison the defendant kicks out at Henshall in the hallway, making contact with her groin causing her to bend over in pain. Both Pc Wilmot and Pc Eddison witness this.",
+      "Hearing that police have arrived, the defendant puts the knife down and is detained by Pc Wilmot. Pc Eddison establishes from Henshall that the offence of assault has been committed and arrests the defendant.",
+      "Hearing that police have arrived, the defendant puts the knife down and is detained by Pc Wilmot. Pc Eddison establishes from Henshall that the offence of assault has been committed and arrests the defendant.",
+      "Due to the behaviour of the defendant Hampson and Fraser attempt to get him to leave. The defendant enters the kitchen and takes a kitchen knife, which he holds against his own chest. The defendant does not threaten anyone with the knife.",
+      "Due to the behaviour of the defendant Hampson and Fraser attempt to get him to leave. The defendant enters the kitchen and takes a kitchen knife, which he holds against his own chest. The defendant does not threaten anyone with the knife.",
+      "The defendant then moves around the address speaking to Wendy Hampson and Dominic Fraser, both heard what happened to Henshall in the living-room, and saw her afterwards.",
+      "The defendant then moves around the address speaking to Wendy Hampson and Dominic Fraser, both heard what happened to Henshall in the living-room, and saw her afterwards.",
+      "Henshall goes into her bedroom with Harry and calls the police.",
+      "Henshall goes into her bedroom with Harry and calls the police.",
+      "Henshall tellâ€™s the defendant while in the living-room â€˜Gregory you canâ€™t keep turning up here drunk, itâ€™s not fair on me and itâ€™s not fair on Harry. Get some sleep and weâ€™ll talk in the morningâ€™. The defendant responds to this by slapping Henshall to the left side of her face on the cheek and ear, with an open right hand, saying â€˜you canâ€™t tell me what to doâ€™. The force of contact causes Henshall to fall to the floor. Getting back up she tellâ€™s the defendant â€˜Gregory, youâ€™ve got to leave, youâ€™ve got to goâ€™.",
+      "Henshall tellâ€™s the defendant while in the living-room â€˜Gregory you canâ€™t keep turning up here drunk, itâ€™s not fair on me and itâ€™s not fair on Harry. Get some sleep and weâ€™ll talk in the morningâ€™. The defendant responds to this by slapping Henshall to the left side of her face on the cheek and ear, with an open right hand, saying â€˜you canâ€™t tell me what to doâ€™. The force of contact causes Henshall to fall to the floor. Getting back up she tellâ€™s the defendant â€˜Gregory, youâ€™ve got to leave, youâ€™ve got to goâ€™.",
+      "About 05:00 hours on the 23rd September 2015 an intoxicated defendant turns up at his mumâ€™s, Sarah Henshall, address. Also present is the property is her 9 year old son, Harry, daughter Wendy Hampson and Wendyâ€™s boyfriend Dominic Fraser.",
+      "About 05:00 hours on the 23rd September 2015 an intoxicated defendant turns up at his mumâ€™s, Sarah Henshall, address. Also present is the property is her 9 year old son, Harry, daughter Wendy Hampson and Wendyâ€™s boyfriend Dominic Fraser.",
+      "State value of property stolen or damaged (or recovered). See Sec 9 for recording compensation details):  N/A",
+      "State value of property stolen or damaged (or recovered). See Sec 9 for recording compensation details):  N/A",
+      "Pc 74628 Eddison: Arrested the defendant for the assault on victim Henshall and witnessed as the defendant kicked out at her.",
+      "Pc 74628 Eddison: Arrested the defendant for the assault on victim Henshall and witnessed as the defendant kicked out at her.",
+      "Pc 74886 Wilmot: Assisted in the arrest of the defendant, witnessed the defendant kick victim Henshall.",
+      "Pc 74886 Wilmot: Assisted in the arrest of the defendant, witnessed the defendant kick victim Henshall.",
+      "Sarah Henshall: Victim of domestic assault.",
+      "Sarah Henshall: Victim of domestic assault.",
+      "Key witness(es) and their role (e.g. eye witness, person providing identity).:",
+      "Key witness(es) and their role (e.g. eye witness, person providing identity).:",
+      "The defendant is conveyed to Williamstown police station and his detention authorised.",
+      "The defendant is conveyed to Williamstown police station and his detention authorised.",
+      "While being escorted away by Pc Wilmot and Pc Eddison the defendant kicks out at Henshall in the hallway, making contact with her groin causing her to bend over in pain. Both Pc Wilmot and Pc Eddison witness this.",
+      "While being escorted away by Pc Wilmot and Pc Eddison the defendant kicks out at Henshall in the hallway, making contact with her groin causing her to bend over in pain. Both Pc Wilmot and Pc Eddison witness this.",
+      "Hearing that police have arrived, the defendant puts the knife down and is detained by Pc Wilmot. Pc Eddison establishes from Henshall that the offence of assault has been committed and arrests the defendant.",
+      "Hearing that police have arrived, the defendant puts the knife down and is detained by Pc Wilmot. Pc Eddison establishes from Henshall that the offence of assault has been committed and arrests the defendant.",
+      "Due to the behaviour of the defendant Hampson and Fraser attempt to get him to leave. The defendant enters the kitchen and takes a kitchen knife, which he holds against his own chest. The defendant does not threaten anyone with the knife.",
+      "Due to the behaviour of the defendant Hampson and Fraser attempt to get him to leave. The defendant enters the kitchen and takes a kitchen knife, which he holds against his own chest. The defendant does not threaten anyone with the knife.",
+      "The defendant then moves around the address speaking to Wendy Hampson and Dominic Fraser, both heard what happened to Henshall in the living-room, and saw her afterwards.",
+      "The defendant then moves around the address speaking to Wendy Hampson and Dominic Fraser, both heard what happened to Henshall in the living-room, and saw her afterwards.",
+      "Henshall goes into her bedroom with Harry and calls the police.",
+      "Henshall goes into her bedroom with Harry and calls the police.",
+      "Henshall tellâ€™s the defendant while in the living-room â€˜Gregory you canâ€™t keep turning up here drunk, itâ€™s not fair on me and itâ€™s not fair on Harry. Get some sleep and weâ€™ll talk in the morningâ€™. The defendant responds to this by slapping Henshall to the left side of her face on the cheek and ear, with an open right hand, saying â€˜you canâ€™t tell me what to doâ€™. The force of contact causes Henshall to fall to the floor. Getting back up she tellâ€™s the defendant â€˜Gregory, youâ€™ve got to leave, youâ€™ve got to goâ€™.",
+      "Henshall tellâ€™s the defendant while in the living-room â€˜Gregory you canâ€™t keep turning up here drunk, itâ€™s not fair on me and itâ€™s not fair on Harry. Get some sleep and weâ€™ll talk in the morningâ€™. The defendant responds to this by slapping Henshall to the left side of her face on the cheek and ear, with an open right hand, saying â€˜you canâ€™t tell me what to doâ€™. The force of contact causes Henshall to fall to the floor. Getting back up she tellâ€™s the defendant â€˜Gregory, youâ€™ve got to leave, youâ€™ve got to goâ€™.",
+      "About 05:00 hours on the 23rd September 2015 an intoxicated defendant turns up at his mumâ€™s, Sarah Henshall, address. Also present is the property is her 9 year old son, Harry, daughter Wendy Hampson and Wendyâ€™s boyfriend Dominic Fraser.",
+      "About 05:00 hours on the 23rd September 2015 an intoxicated defendant turns up at his mumâ€™s, Sarah Henshall, address. Also present is the property is her 9 year old son, Harry, daughter Wendy Hampson and Wendyâ€™s boyfriend Dominic Fraser."
+    ]
+  }
+}

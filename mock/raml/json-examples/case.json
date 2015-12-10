@@ -1,0 +1,71 @@
+{
+  "id": "7e2f843e-d639-40b3-8611-8015f3a18958",
+  "urn": "22C22222222",
+  "policeOfficerInCase": {
+    "personId": "aa746921-d839-4867-bcf9-b41db8ebc852",
+    "rank": "constable",
+    "narrative": "",
+    "badgeNumber": 223
+  },
+  "policeSupervisor": {
+    "personId": "ab746921-d839-4867-bcf9-b41db8ebc852",
+    "rank": "sergeant",
+    "narrative": "",
+    "badgeNumber": 223
+  },
+  "witnesses": [
+    {
+      "id": "bbc-def-hjk-kdj",
+      "personId": "mnbjhsdfjhk-hkjsdhf-kjahsdj-kjhasdkjhasd",
+      "policePersonId": "policePersonId",
+      "statements": [
+        "id5",
+        "id6"
+      ],
+      "classification": {
+        "isVictim": true,
+        "isEntitlementRequired": true,
+        "witnessExpertise": "EXPERT",
+        "witnessStatus": "INTIMIDATED"
+      }
+    }
+  ],
+  "suspects": [
+    {
+      "id": "ebabacce-1628-48b3-83b8-6f0d2412019f",
+      "personId": "25745fd7-fd08-483f-baa1-a8fc8a684437",
+      "asn": "ASN",
+      "bailConditions": "Test",
+      "bailDate": {
+        "year": 2015,
+        "month": 10,
+        "day": 10
+      },
+      "policeRemandStatus": "Test",
+      "charges": [
+        {
+          "id": "39336236-3366-6161-2d64-3735352d3466",
+          "code": "CJ123",
+          "description": "Assault",
+          "status": "Authrorised",
+          "categoryType": "Either way",
+          "fromDate": {
+            "year": 2015,
+            "month": 10,
+            "day": 10
+          },
+          "toDate": {
+            "year": 2015,
+            "month": 10,
+            "day": 10
+          },
+          "particularClassification": "Classification",
+          "particularLocation": {
+            "address1": "14, Hampton Court",
+            "postCode": "HM1 1XH"
+          }
+        }
+      ]
+    }
+  ]
+}

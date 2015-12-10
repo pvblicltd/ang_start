@@ -1,0 +1,149 @@
+#%RAML 0.8
+title: Online Case Progression Service - Write
+baseUri: http://localhost:8080/structure-cst-write
+version: v0.1
+mediaType: application/json
+protocols: [ HTTP, HTTPS ]
+
+traits:
+  - response202: !include traits/202-response.yaml
+  - response400: !include traits/400-response.yaml
+  - response500: !include traits/500-response.yaml    
+  - responseHeaders: !include traits/moj-response-headers.yaml
+  - secured : !include traits/moj-request-headers.yaml
+documentation: 
+  - title: Category
+    content : Consumer Service Tier
+  - title: Status
+    content : In development
+  - title: Description
+    content: |
+       Welcome to Structure context API Documentation. This API allows you to send commands to be handled by a command handler (DOT) which will in turn generate events to apply to the domain model, store the event in an event store and publish the event to an event lister to be read.
+       
+  - title: Context
+    content : Provides data for case
+
+  - title: Security Policy
+    content: TBC
+  - title: Where Used
+    content: https://codereview.dev2.cloud.local/#/admin/projects/C2I
+  - title: Source Code
+    content : https://codereview.dev2.cloud.local/#/admin/projects/C2I
+  - title: Artefacts
+    content: 
+  - title: Designs
+    content: https://triadmoj.atlassian.net/wiki/display/CPP/CQRS+Framework
+  - title: Test Cases
+    content: Pointers to the relevant Test Cases, etc. for the Service
+
+/cases:
+  description: | 
+    Post to this entry point to create a case
+  post:
+    is: [secured, 
+         responseHeaders, 
+         response202, 
+         response400, 
+         response500]
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+        schema: !include json-schemas/create-case.json
+        example: !include json-examples/create-case.json
+
+/cases/{id}/witnesses:
+  description: |
+    Post to this entry point to add witnesses to a case
+  post:
+    is: [secured,
+         responseHeaders,
+         response202,
+         response400,
+         response500]
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+        schema: !include json-schemas/add-witnesses.json
+        example: !include json-examples/add-witnesses.json
+
+/cases/{id}/witnesses/{wid}/attributes:
+  description: |
+    Post to this entry point to updated a witnesses attributes
+  post:
+    is: [secured,
+         responseHeaders,
+         response202,
+         response400,
+         response500]
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+        schema: !include json-schemas/update-attributes.json
+        example: !include json-examples/update-attributes.json
+
+/cases/{id}/witnesses/{witnessId}/statements:
+  description: |
+    Post to this entry point to add a witnesses statement
+  post:
+    is: [secured,
+         responseHeaders,
+         response202,
+         response400,
+         response500]
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+        schema: !include json-schemas/add-witness-statement.json
+        example: !include json-examples/add-witness-statement.json
+
+/cases/{id}/victims:
+  description: |
+    Post to this entry point to add victim to a case
+  post:
+    is: [secured,
+         responseHeaders,
+         response202,
+         response400,
+         response500]
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+        schema: !include json-schemas/add-victim.json
+        example: !include json-examples/add-victim.json
+        
+/cases/{id}/suspects:
+  description: Add suspects.
+  post:
+    description: Add suspects.
+    is: [secured, 
+         responseHeaders, 
+         response202,
+         response400,
+         response500]
+         
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+
+    body:
+        application/json:
+           example:
+            !include json-examples/add_suspects.json
+           schema:
+            !include json-schemas/add_suspects_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            202:
+                description: OK

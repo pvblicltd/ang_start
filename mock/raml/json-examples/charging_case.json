@@ -1,0 +1,115 @@
+{  
+   "caseId":"55DP0028115",
+   "urn":"44MR2287115",
+   "exhibits":[  
+      {  
+         "exhibitId":11112,
+         "exhibitRef":121212,
+         "used":true
+      },
+      {  
+         "exhibitId":11113,
+         "exhibitRef":121213,
+         "used":true
+      }
+   ],
+   "suspects":[  
+      {  
+         "firstName":"Gregory Colin",
+         "lastName":"HAMPSON",
+         "dateOfBirth":"1996-10-17",
+         "address":"9 Privet Drive",
+         "proposedCharges":[  
+            {  
+               "code":"CJ88116",
+               "description":"Assault by beating "
+            }
+         ]
+      }
+   ],
+"policeNarrative": [
+      {
+        "heading": "Summary of the Key Evidence",
+        "paragraphs": [
+          "About 05:00 hours on the 23rd September 2015 an intoxicated defendant turns up at his mum’s, Sarah Henshall, address. Also present is the property is her 9 year old son, Harry, daughter Wendy Hampson and Wendy’s boyfriend Dominic Fraser.",
+          "Henshall tell’s the defendant while in the living-room ‘Gregory you can’t keep turning up here drunk, it’s not fair on me and it’s not fair on Harry. Get some sleep and we’ll talk in the morning’. The defendant responds to this by slapping Henshall to the left side of her face on the cheek and ear, with an open right hand, saying ‘you can’t tell me what to do’. The force of contact causes Henshall to fall to the floor. Getting back up she tell’s the defendant ‘Gregory, you’ve got to leave, you’ve got to go’.",
+          "Henshall goes into her bedroom with Harry and calls the police.",
+          "The defendant then moves around the address speaking to Wendy Hampson and Dominic Fraser, both heard what happened to Henshall in the living-room, and saw her afterwards.",
+          "Due to the behaviour of the defendant Hampson and Fraser attempt to get him to leave. The defendant enters the kitchen and takes a kitchen knife, which he holds against his own chest. The defendant does not threaten anyone with the knife.",
+          "Hearing that police have arrived, the defendant puts the knife down and is detained by Pc Wilmot. Pc Eddison establishes from Henshall that the offence of assault has been committed and arrests the defendant.",
+          "While being escorted away by Pc Wilmot and Pc Eddison the defendant kicks out at Henshall in the hallway, making contact with her groin causing her to bend over in pain. Both Pc Wilmot and Pc Eddison witness this.",
+          "The defendant is conveyed to Williamstown police station and his detention authorised.",
+          "Key witness(es) and their role (e.g. eye witness, person providing identity).:",
+          "Sarah Henshall: Victim of domestic assault.",
+          "Pc 74886 Wilmot: Assisted in the arrest of the defendant, witnessed the defendant kick victim Henshall.",
+          "Pc 74628 Eddison: Arrested the defendant for the assault on victim Henshall and witnessed as the defendant kicked out at her.",
+          "State value of property stolen or damaged (or recovered). See Sec 9 for recording compensation details):  N/A"
+        ]
+      },
+      {
+        "heading": "Defendant Interview",
+        "paragraphs": [
+          "Defendant: Gregory Hampson",
+          "Date of interview:  23/09/2015",
+          "Interviewing officer(s):  Pc 7733 Hunt",
+          "Other person(s) present:  Natalia Black, defence solicitor",
+          "Summary of defendant explanation:",
+          "The interview covered the events of the night, persons present, the location, level of intoxication, what occurred inside the address, words used and behaviour of persons.",
+          "The defendant answered no comment to all questions, saying the words ‘no comment’, although clarified two points, he did not mean any harm to anyone else when he had hold of the knife in the kitchen, and kicking out at his mum when being removed from the address by police was an accident.",
+          "Pc Hunt: Is it right that the whole time you held the knife towards yourself, you didn’t threaten anyone?",
+          "Hampson: That is correct.",
+          "Pc Hunt: Did you mean to kick your mum?",
+          "Hampson: No.",
+          "Pc Hunt: Did you mean for your knee to connect with her groin area?",
+          "Hampson: No.",
+          "Defendant’s response/reaction to CCTV (if ‘key evidence’ and shown in I/V):  N/A",
+          "Relevant admissions and their start/finish counter reference times:",
+          "N/A"
+        ]
+      },
+      {
+        "heading": "Non Key Evidence",
+        "paragraphs": [
+          "Name of non-key witness(es) and their role:",
+          "Wendy Hampson: Witnessed the behaviour of the defendant before and after the assault.",
+          "Dominic Fraser: Witnessed the behaviour of the defendant before and after the assault.",
+          "Pc 73040 Thompson: Charged the defendant in custody.",
+          "Pc 7733 Hunt: Interviewed the defendant and is the officer in case for the investigation."
+        ]
+      },
+      {
+        "heading": "Visually Recorded Evidence",
+        "paragraphs": [
+          "There is no known visually recorded material."
+        ]
+      },
+      {
+        "heading": "Injuries",
+        "paragraphs": [
+          "Description of injuries:  Non-injury assault."
+        ]
+      },
+      {
+        "heading": "Forensic Evidence",
+        "paragraphs": []
+      },
+      {
+        "heading": "DIP testing",
+        "paragraphs": []
+      },
+      {
+        "heading": "Application for Order(s) on Conviction",
+        "paragraphs": []
+      },
+      {
+        "heading": "Application for Compensation",
+        "paragraphs": []
+      },
+      {
+        "heading": "Other",
+        "paragraphs": []
+      }
+    ],
+   "id":"55DP0028115",
+   "version":1
+}

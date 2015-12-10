@@ -1,0 +1,48 @@
+{ 
+  "type": "array",
+  "items": {    
+    "type": "object",
+    "properties": {
+      "aggregateId": {
+        "description": "The aggregateId",
+        "type": "string"
+      },
+      "foreName": {
+        "description": "The defendant forename",
+        "type": "string"
+      },
+      "lastName": {
+        "description": "The defendant last name",
+        "type": "string"
+      },
+      "dateOfBirth": {
+        "description": "The defendant date of birth",
+        "type": "string"
+      },
+      "urn": {
+        "description": "The defendant urn",
+        "type": "string"
+      },
+      "nextCourtDate": {
+        "description": "Next court hearing date",
+        "type": "null"
+      },
+      "associatedOn": {
+        "description": "Associated date",
+        "type": "null"
+      }
+    },
+    "required": [
+      "aggregateId",
+      "foreName",
+      "lastName",
+      "dateOfBirth",
+      "urn",
+      "nextCourtDate",
+	  "associatedOn"
+    ]
+  },
+  "required": [
+    "0"
+  ]
+}

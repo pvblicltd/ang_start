@@ -1,0 +1,92 @@
+{
+  "urn": "T21098",
+  "aggregateCaseId": "19",
+  "version": 12,
+  "eventId": "983129",
+  "defendant": {
+    "id": 6,
+    "firstName": "Joseph",
+    "lastName": "Bloggs",
+    "dateOfBirth": "NEEDS TO BE TIMESTAMP",
+    "charge": {
+      "id": 12,
+      "description": "Common assault on 13 March 2015",
+      "pleas": {
+        "anticipatedPlea": "Not guilty",
+        "anticipatedIssue": "Alibi",
+        "anticipatedIssueDetail": "Defendant said he was not in the vicinity at the time of the incident.",
+        "indicatedPlea": "Not guilty",
+        "indicatedIssue": "Alibi",
+        "indicatedIssueDetail": "Donec ullamcorper nulla non metus auctor fringilla."
+      }
+    }
+  },
+  "directions": [
+    {
+      "title": "Expert evidence",
+      "statutoryReference": "Criminal Procedure Rules, rr.3.3, 3.9",
+      "instructions": [
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+          "timeLimit": "28 days",
+		  "timeLimitNote": "Not prescribed by rules or other legislation",
+          "assignee": "Defence"
+        },
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+		  "timeLimit": "-",
+		  "timeLimitNote": "",
+          "assignee": "Defence"
+        }
+      ]
+    },
+    {
+      "title": "More Expert evidence",
+      "statutoryReference": "Criminal Procedure Rules, rr.3.3, 3.9",
+      "instructions": [
+        {
+		  "id": "DIR-122",
+          "description": "If either party relies on expert evidence, the directions below apply.",
+          "subInstructions": [
+            {
+              "id": "DIR-123",
+              "description": "respond to court within one week",
+			  "timeLimit": "28 days",
+		      "timeLimitNote": "Not prescribed by rules or other legislation",
+              "assignee": "Defence & Prosecution"
+            },
+            {
+              "id": "DIR-123",
+              "description": "respond to court within one week",
+			  "timeLimit": "28 days",
+		      "timeLimitNote": "Not prescribed by rules or other legislation",
+              "assignee": "Defence & Prosecution"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Expert evidence",
+      "statutoryReference": "Criminal Procedure Rules, rr.3.3, 3.9",
+      "instructions": [
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+		  "timeLimit": "28 days",
+		  "timeLimitNote": "Not prescribed by rules or other legislation",
+          "assignee": "Defence"
+        },
+        {
+          "id": "DIR-123",
+          "description": "respond to court within one week",
+		  "timeLimit": "28 days",
+		  "timeLimitNote": "Not prescribed by rules or other legislation",
+          "assignee": "Defence"
+        }
+      ]
+    }
+  ]
+}

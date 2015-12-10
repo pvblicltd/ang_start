@@ -1,0 +1,29 @@
+{
+  "urn": "T21098",
+  "caseId": 11,
+  "id": "19",
+  "version": 12,
+  "defendants": [
+    {
+      "id": 20,
+      "firstName": "Joe",
+      "lastName": "Bloggs",
+      "dateOfBirth": "1990-01-01T00:00:00Z",
+      "charges": [
+        {
+		 "id":21,
+         "description": "Common assault on 13 March 2015",
+         "anticipatedPlea": {
+            "type": "GUILTY",
+   "issues": [
+       {
+        "type": "ALIBI",
+        "details": "Defendant said he was not in the vicinity at the time of the incident."
+       }
+   ]
+          }
+        }
+      ]
+    }
+  ]
+}
