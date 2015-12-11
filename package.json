@@ -2,7 +2,10 @@
   "name": "cpp-ui-spa-master",
   "version": "0.0.1",
   "description": "Common Platform Project",
-  "author": "Fabio Tisci",
+  "author": [
+    "Fabio Tisci",
+    "Olu Alli"
+  ],
   "devDependencies": {
     "browser-sync": "^2.10.0",
     "del": "^1.1.1",
@@ -60,11 +63,14 @@
     "yargs": "^3.30.0"
   },
   "scripts": {
+    "start": "node_modules/.bin/nodemon ./mock/server.js",
     "test": "test",
     "postinstall": "bower install"
   },
   "dependencies": {
     "lodash": "^3.10.1",
-    "path": "^0.12.7"
+    "nodemon": "^1.8.1",
+    "path": "^0.12.7",
+    "raml-mocker-server": "^0.1.4"
   }
 }

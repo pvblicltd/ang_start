@@ -6,24 +6,18 @@ var app = require('express')(),
     host = 'http://localhost:' || '', // TODO: make dynamic
     logger = require('morgan'),
     path = require('path'),
-    ramlServer = require('raml-mocker-server'),
-    yamlConfig = require('node-yaml-config');
+    ramlServer = require('raml-mocker-server');
 
 
-var config = yamlConfig.load(path.join(__dirname, '/config/config.yml'));
-
-if (!fs.existsSync(path.join(__dirname, config.scheduling.path))) {
-    throw new Error('Project path ' + config.scheduling.path + ' does not exist');
-}
-
-app.use(logger('dev'));
-app.use(errorHandler.init);
+//app.use(logger('dev'));
+//app.use(errorHandler.init);
 
 var options = {
     debug: true,
-    port: config.scheduling.port,
-    path: config.scheduling.path,
-    watch: true
+    port: 8888,
+    path: './mock/raml',
+    watch: true,
+    prioritizeBy:'example'
 }
 
 // load all endpoints

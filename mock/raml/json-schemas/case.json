@@ -94,6 +94,76 @@
           }
         }
       }
+    },
+    "exhibits": {
+      "id": "exhibits",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "id",
+            "type": "string"
+          },
+          "personId": {
+            "id": "personId",
+            "type": "string"
+          },
+          "exhibitMaterialId": {
+            "id": "exhibitMaterialId",
+            "type": "string"
+          },
+          "exhibitName": {
+            "id": "exhibitName",
+            "type": "string"
+          },
+          "policeName": {
+            "id": "policeName",
+            "type": "string"
+          },
+          "exhibitClassifications": {
+            "id": "exhibitClassifications",
+            "type": "array",
+            "items": [
+              {
+                "type": "object",
+                "properties": {
+                  "classification": {
+                    "id": "classification",
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          }
+        }
+      }
+    },
+    "caseDocuments": {
+      "id": "caseDocuments",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "documentMaterialId": {
+              "id": "documentMaterialId",
+              "type": "string"
+            },
+            "policeName": {
+              "id": "policeName",
+              "type": "string"
+            },
+            "classification": {
+              "id": "classification",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
     }
   },
   "required": [

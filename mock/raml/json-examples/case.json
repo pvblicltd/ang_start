@@ -67,5 +67,29 @@
         }
       ]
     }
+  ],
+  "exhibits": [
+    {
+      "id": "exhibitId",
+      "personId": "cppContextPersonId",
+      "exhibitMaterialId": "materialId1",
+      "exhibitName":"descriptionOfExhibit",
+      "policeName": "policeName",
+      "exhibitClassifications": [
+        {
+          "classification": "e.g. audio tape"
+        },
+        {
+          "classification": "e.g. sensitive video"
+        }
+      ]
+    }
+  ],
+  "caseDocuments": [
+    {
+      "documentMaterialId": "materialId1",
+      "policeName": "name given to it by the cops",
+      "classification": "police classification"
+    }
   ]
 }
