@@ -1,0 +1,3 @@
+[submodule "cppapi"]
+	path = cppapi
+	url = ssh://olua.dv2@coderepo.dev2.cloud.local:29418/cppapi
