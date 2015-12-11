@@ -147,3 +147,30 @@ documentation:
                 description: Internal Server Error
             202:
                 description: OK
+				
+/cases/{id}/police-summaries:
+  description: Add police summary details.
+  post:
+    description: Add police summary details.
+    is: [secured, 
+         responseHeaders, 
+         response202,
+         response400,
+         response500]
+         
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+
+    body:
+        application/json:
+           example:
+            !include json-examples/add_police_summary.json
+           schema:
+            !include json-schemas/add_police_summary_schema.json
+    responses:
+            500:
+                description: Internal Server Error
+            202:
+                description: OK				
