@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({ lazy: true });
 
 module.exports = function (config, log) {
+
     var port = process.env.PORT || config.defaultPort;
 
     gulp.task('start-mocks', function () {
@@ -18,7 +19,9 @@ module.exports = function (config, log) {
 
         return $.nodemon(nodeOptions)
             .on('restart', function (ev) {
+
                 log('*** nodemon restarted');
+
                 log('files changed on restart:\n' + ev);
 
                 setTimeout(function () { // reload browser-sync after server delay

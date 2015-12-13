@@ -4,16 +4,16 @@ var app = require('express')(),
     //errorHandler = require('./utils/error-handler.js')(),
     config = require('../gulp.config.js')(),
     fs = require('fs'),
-    host = 'http://localhost:' || '', // TODO: make dynamic
     logger = require('morgan'),
     path = require('path'),
+    port = process.env.PORT || 8888,
     ramlServer = require('raml-mocker-server');
 
 
 var options = {
     app: app,
     debug: true,
-    port: config.defaultPort,
+    port: port,
     path: config.raml,
     watch: true,
     prioritizeBy:'example'
@@ -28,7 +28,7 @@ function callback (app) {
     //app.use(errorHandler.init);
 
     app.listen(options.port, function () {
-        console.log('The CJS Contextual Raml mock server is running at ' + host + options.port);
+        console.log('The CJS Contextual Raml-Mock express server is listening on port ' + port);
     });
 };
 

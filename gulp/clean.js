@@ -11,7 +11,7 @@ module.exports = function(config, log){
         clean(files, done);
     });
 
-    
+    // remove the /mock/raml folder
     gulp.task('clean-raml', function (done) {
         var files = [].concat(config.raml)
         clean(files, done);

@@ -97,30 +97,28 @@
               app + 'routes/**/*.spec.js'
             ],
 
-            ///*
-            // * Browser sync serving paths
-            // */
-            //serve: {
-            //  dev: {
-            //    root: src,
-            //    port: 3008,
-            //    routes: {
-            //      '/common': "node_modules/common/build",
-            //      '/bower_components': 'bower_components',
-            //      '/express': 'src/translations',
-            //      '/apps/nbt': 'src'
-            //    },
-            //    index: 'index.app.html'
-            //  },
-            //  dist: {
-            //    root: 'build/app/',
-            //    port: 3008
-            //  },
-            //  prod: {
-            //    root: 'build/app/',
-            //    port: 3008
-            //  }
-            //},
+            /*
+             * Browser sync serving paths
+             */
+            serve: {
+                dev: {
+                    root: src,
+                    port: 9009,
+                    routes: {
+                        '/bower_components': 'bower_components',
+                        '/dist': 'src'
+                    },
+                    index: 'index.html'
+                },
+                dist: {
+                    root: 'dist',
+                    port: 9009
+                },
+                prod: {
+                    root: 'dist',
+                    port: 9009
+                }
+            },
 
             browserReloadDelay: 1000,
 
@@ -128,6 +126,7 @@
              * Node settings
              */
             defaultPort: 8888,
+            host: 'http://localhost:',
             serverFiles: 'mock',
             ramlServer: 'mock/server.js',
             raml: 'mock/raml/'
