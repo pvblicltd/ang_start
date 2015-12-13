@@ -2,6 +2,7 @@
 
 var app = require('express')(),
     //errorHandler = require('./utils/error-handler.js')(),
+    config = require('../gulp.config.js')(),
     fs = require('fs'),
     host = 'http://localhost:' || '', // TODO: make dynamic
     logger = require('morgan'),
@@ -12,8 +13,8 @@ var app = require('express')(),
 var options = {
     app: app,
     debug: true,
-    port: 8888,
-    path: './mock/raml',
+    port: config.defaultPort,
+    path: config.raml,
     watch: true,
     prioritizeBy:'example'
 }
