@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The outline id",
+      "type": "string"
+    },
+    "outlineHeading": {
+      "description": "The outline heading",
+      "type": "string"
+    },
+    "outlineText": {
+      "description": "The outline text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "outlineHeading",
+    "outlineText"
+  ]
+}

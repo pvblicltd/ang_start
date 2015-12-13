@@ -1,0 +1,54 @@
+{
+  "description": "List of cases",
+  "type": "array",
+  "items": {    
+    "type": "object",
+    "properties": {
+      "aggregateId": {
+        "description": "The aggregate id",
+        "type": "string"
+      },
+      "eventId": {
+        "description": "The event id",
+        "type": "null"
+      },
+      "versionNo": {
+        "description": "The version number",
+        "type": "integer"
+      },
+      "foreName": {
+        "description": "The defendant forename",
+        "type": "string"
+      },
+      "lastName": {
+        "description": "The defendant lastname",
+        "type": "string"
+      },
+      "dateOfBirth": {
+        "description": "The defendant date of birth",
+        "type": "string"
+      },
+      "urn": {
+        "description": "The defendant URN",
+        "type": "string"
+      },
+      "deletedOn": {
+        "description": "Date if the case is attached to an organisation",
+        "type": "null"
+      }
+    },
+    "required": [
+      "aggregateId",
+      "eventId",
+      "versionNo",
+      "foreName",
+      "lastName",
+      "dateOfBirth",
+      "urn",
+      "deletedOn"
+    ]
+  },
+  "required": [
+    "0"
+  ]
+}

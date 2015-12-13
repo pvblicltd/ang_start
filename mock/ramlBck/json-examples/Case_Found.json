@@ -1,0 +1,12 @@
+[
+  {
+    "aggregateId": "1",
+    "eventId": null,
+    "versionNo": 1,
+    "foreName": "forename",
+    "lastName": "lastname",
+    "dateOfBirth": "1985-09-24",
+    "urn": "URN",
+    "deletedOn": null
+  }
+]

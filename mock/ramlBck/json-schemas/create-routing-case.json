@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "urn": {
+      "id": "/urn",
+      "type": "string"
+    },
+    "caseId": {
+      "id": "/caseId",
+      "type": "integer"
+    },
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "defendants": {
+      "id": "/defendants",
+      "type": "array",
+      "items": {
+        "id": "/defendants/0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "/defendants/0/id",
+            "type": "integer"
+          },
+          "firstName": {
+            "id": "/defendants/0/firstName",
+            "type": "string"
+          },
+          "lastName": {
+            "id": "/defendants/0/lastName",
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "id": "/defendants/0/dateOfBirth",
+            "type": "string"
+          },
+          "charges": {
+            "id": "/defendants/0/charges",
+            "type": "array",
+            "items": {
+              "id": "/defendants/0/charges/0",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "/defendants/0/charges/0/id",
+                  "type": "integer"
+                },
+                "description": {
+                  "id": "/defendants/0/charges/0/description",
+                  "type": "string"
+                },
+                "anticipatedPlea": {
+                  "id": "/defendants/0/charges/0/anticipatedPlea",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "id": "/defendants/0/charges/0/anticipatedPlea/type",
+                      "type": "string"
+                    },
+                    "issues": {
+                      "id": "/defendants/0/charges/0/anticipatedPlea/issues",
+                      "type": "array",
+                      "items": {
+                        "id": "/defendants/0/charges/0/anticipatedPlea/issues/0",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "id": "/defendants/0/charges/0/anticipatedPlea/issues/0/type",
+                            "type": "string"
+                          },
+                          "details": {
+                            "id": "/defendants/0/charges/0/anticipatedPlea/issues/0/details",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "urn",
+    "caseId",
+    "id",
+    "version",
+    "defendants"
+  ]
+}

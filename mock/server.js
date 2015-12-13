@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 var app = require('express')(),
-    errorHandler = require('./utils/error-handler.js')(),
+    //errorHandler = require('./utils/error-handler.js')(),
     fs = require('fs'),
     host = 'http://localhost:' || '', // TODO: make dynamic
     logger = require('morgan'),
@@ -9,10 +9,8 @@ var app = require('express')(),
     ramlServer = require('raml-mocker-server');
 
 
-//app.use(logger('dev'));
-//app.use(errorHandler.init);
-
 var options = {
+    app: app,
     debug: true,
     port: 8888,
     path: './mock/raml',
@@ -20,9 +18,16 @@ var options = {
     prioritizeBy:'example'
 }
 
-// load all endpoints
-require('./endpoints/hearing')(app, ramlServer, options);
+// returns created server
+var server = ramlServer(options, callback);
 
-app.listen(config.scheduling.port, function () {
-    console.log('The CSSAPI Raml mock server is running at ' + host + config.scheduling.port);
-});
+function callback (app) {
+
+    app.use(logger('dev'));
+    //app.use(errorHandler.init);
+
+    app.listen(options.port, function () {
+        console.log('The CJS Contextual Raml mock server is running at ' + host + options.port);
+    });
+};
+

@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "hearingName": {
+      "id": "hearingName",
+      "type": "string",
+      "default": "hearingName"
+    },
+    "hearingKey": {
+      "id": "hearingKey",
+      "type": "string",
+      "default": "key123"
+    },
+    "hearingCase": {
+      "id": "hearingCase",
+      "type": "string",
+      "default": "1"
+    },
+    "hearingType": {
+      "id": "hearingType",
+      "type": "string",
+      "default": "Trial"
+    },
+    "startDate": {
+      "id": "startDate",
+      "type": "string",
+      "default": "16-11-2015"
+    },
+    "trialEstimate": {
+      "id": "trialEstimate",
+      "type": "integer",
+      "default": 1
+    },
+    "bookingType": {
+      "id": "bookingType",
+      "type": "string",
+      "default": "Provisional"
+    },
+    "bookingStatus": {
+      "id": "bookingStatus",
+      "type": "string",
+      "default": "Unscheduled"
+    },
+    "startDateForSlot": {
+      "id": "startDateForSlot",
+      "type": "string",
+      "default": "16-11-2015"
+    },
+    "active": {
+      "id": "active",
+      "type": "boolean",
+      "default": true
+    },
+    "courtRoomName": {
+      "id": "courtRoomName",
+      "type": "string",
+      "default": "room1"
+    },
+    "hearingNote": {
+      "id": "hearingNote",
+      "type": "string",
+      "default": "hearingNote"
+    },
+    "hearingStatus": {
+      "id": "hearingStatus",
+      "type": "string",
+      "default": "Pending"
+    },
+    "trialKPIDate": {
+      "id": "trialKPIDate",
+      "type": "string",
+      "default": "16-11-2016"
+    }
+  },
+  "required": [ "hearingName", "hearingKey", "hearingCase", "hearingType", "startDate", "trialEstimate", "bookingType", "bookingStatus", "startDateForSlot", "active", "courtRoomName", "hearingNote", "hearingStatus", "trialKPIDate" ]
+}

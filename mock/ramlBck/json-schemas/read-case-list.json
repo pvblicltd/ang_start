@@ -1,0 +1,194 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "array",
+  "items": [
+    {
+      "id": "/0",
+      "type": "object",
+      "properties": {
+        "urn": {
+          "id": "/0/urn",
+          "type": "string"
+        },
+        "aggregateCaseId": {
+          "id": "/0/aggregateCaseId",
+          "type": "string"
+        },
+        "version": {
+          "id": "/0/version",
+          "type": "integer"
+        },
+        "eventId": {
+          "id": "/0/eventId",
+          "type": "string"
+        },
+        "defendant": {
+          "id": "/0/defendant",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "/0/defendant/id",
+              "type": "integer"
+            },
+            "firstName": {
+              "id": "/0/defendant/firstName",
+              "type": "string"
+            },
+            "lastName": {
+              "id": "/0/defendant/lastName",
+              "type": "string"
+            },
+            "dateOfBirth": {
+              "id": "/0/defendant/dateOfBirth",
+              "type": "string"
+            },
+            "charge": {
+              "id": "/0/defendant/charge",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "/0/defendant/charge/id",
+                  "type": "integer"
+                },
+                "description": {
+                  "id": "/0/defendant/charge/description",
+                  "type": "string"
+                },
+                "pleas": {
+                  "id": "/0/defendant/charge/pleas",
+                  "type": "object",
+                  "properties": {
+                    "anticipatedPlea": {
+                      "id": "/0/defendant/charge/pleas/anticipatedPlea",
+                      "type": "string"
+                    },
+                    "anticipatedIssue": {
+                      "id": "/0/defendant/charge/pleas/anticipatedIssue",
+                      "type": "string"
+                    },
+                    "anticipatedIssueDetail": {
+                      "id": "/0/defendant/charge/pleas/anticipatedIssueDetail",
+                      "type": "string"
+                    },
+                    "indicatedPlea": {
+                      "id": "/0/defendant/charge/pleas/indicatedPlea",
+                      "type": "string"
+                    },
+                    "indicatedIssue": {
+                      "id": "/0/defendant/charge/pleas/indicatedIssue",
+                      "type": "string"
+                    },
+                    "indicatedIssueDetail": {
+                      "id": "/0/defendant/charge/pleas/indicatedIssueDetail",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "urn",
+        "aggregateCaseId",
+        "version",
+        "eventId",
+        "defendant"
+      ]
+    },
+    {
+      "id": "/1",
+      "type": "object",
+      "properties": {
+        "urn": {
+          "id": "/1/urn",
+          "type": "string"
+        },
+        "aggregateCaseId": {
+          "id": "/1/aggregateCaseId",
+          "type": "string"
+        },
+        "version": {
+          "id": "/1/version",
+          "type": "integer"
+        },
+        "eventId": {
+          "id": "/1/eventId",
+          "type": "string"
+        },
+        "defendant": {
+          "id": "/1/defendant",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "/1/defendant/id",
+              "type": "integer"
+            },
+            "firstName": {
+              "id": "/1/defendant/firstName",
+              "type": "string"
+            },
+            "lastName": {
+              "id": "/1/defendant/lastName",
+              "type": "string"
+            },
+            "dateOfBirth": {
+              "id": "/1/defendant/dateOfBirth",
+              "type": "string"
+            },
+            "charge": {
+              "id": "/1/defendant/charge",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "/1/defendant/charge/id",
+                  "type": "integer"
+                },
+                "description": {
+                  "id": "/1/defendant/charge/description",
+                  "type": "string"
+                },
+                "pleas": {
+                  "id": "/1/defendant/charge/pleas",
+                  "type": "object",
+                  "properties": {
+                    "anticipatedPlea": {
+                      "id": "/1/defendant/charge/pleas/anticipatedPlea",
+                      "type": "string"
+                    },
+                    "anticipatedIssue": {
+                      "id": "/1/defendant/charge/pleas/anticipatedIssue",
+                      "type": "string"
+                    },
+                    "anticipatedIssueDetail": {
+                      "id": "/1/defendant/charge/pleas/anticipatedIssueDetail",
+                      "type": "string"
+                    },
+                    "indicatedPlea": {
+                      "id": "/1/defendant/charge/pleas/indicatedPlea",
+                      "type": "string"
+                    },
+                    "indicatedIssue": {
+                      "id": "/1/defendant/charge/pleas/indicatedIssue",
+                      "type": "string"
+                    },
+                    "indicatedIssueDetail": {
+                      "id": "/1/defendant/charge/pleas/indicatedIssueDetail",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "0",
+    "1"
+  ]
+}

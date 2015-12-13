@@ -1,0 +1,342 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "caseId": {
+      "id": "caseId",
+      "type": "string",
+      "enum": [
+        null,
+        "100"
+      ]
+    },
+    "suspectId": {
+      "id": "suspectId",
+      "type": "string",
+      "enum": [
+        null,
+        "100"
+      ]
+    },
+    "urn": {
+      "id": "urn",
+      "type": "string",
+      "enum": [
+        null,
+        "55DP0028115"
+      ]
+    },
+    "version": {
+      "id": "version",
+      "type": "integer",
+      "enum": [
+        null
+      ]
+    },
+    "Idpc": {     
+      "type": "object",
+      "properties": {
+        "suspect": {
+          "id": "suspect",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "id",
+              "type": "integer",
+              "enum": [
+                null,
+                100
+              ]
+            },
+            "firstName": {
+              "id": "firstName",
+              "type": "string",
+              "enum": [
+                null,
+                "mike"
+              ]
+            },
+            "lastName": {
+              "id": "lastName",
+              "type": "string",
+              "enum": [
+                null,
+                "smith"
+              ]
+            },
+            "dateOfBirth": {
+              "id": "dateOfBirth",
+              "type": "string",
+              "enum": [
+                null,
+                "1984-10-15"
+              ]
+            },
+            "address": {
+              "id": "address",
+              "type": "string",
+              "enum": [
+                null,
+                "suspect address"
+              ]
+            },
+            "charges": {
+              "id": "charges",
+              "type": "array",
+              "items": {
+                "id": "0",
+                "type": "object",
+                "properties": {
+                  "code": {
+                    "id": "code",
+                    "type": "string",
+                    "enum": [
+                      null,
+                      "CCCJS"
+                    ]
+                  },
+                  "description": {
+                    "id": "description",
+                    "type": "string",
+                    "enum": [
+                      null,
+                      "CCCJS Description"
+                    ]
+                  },
+                  "anticipatedPlea": {
+                    "id": "anticipatedPlea",
+                    "type": "string",
+                    "enum": [
+                      null,
+                      "Not Guilty"
+                    ]
+                  },
+                  "anticipatedIssue": {
+                    "id": "anticipatedIssue",
+                    "type": "string",
+                    "enum": [
+                      null,
+                      "Alibi"
+                    ]
+                  },
+                  "chargeType": {
+                    "id": "chargeType",
+                    "type": "string",
+                    "enum": [
+                      null,
+                      "proposed charge"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "exhibits": {
+          "id": "exhibits",
+          "type": "array",
+          "items": {
+            "id": "0",
+            "type": "object",
+            "properties": {
+              "id": {
+                "id": "id",
+                "type": "integer",
+                "enum": [
+                  null,
+                  1
+                ]
+              },
+              "reference": {
+                "id": "reference",
+                "type": "string",
+                "enum": [
+                  null,
+                  "dr123"
+                ]
+              },
+              "description": {
+                "id": "description",
+                "type": "string",
+                "enum": [
+                  null,
+                  "Interview with SHAIF"
+                ]
+              }
+            }
+          }
+        },
+        "policeNarrative": {
+          "id": "policeNarrative",
+          "type": "array",
+          "items": [
+            {
+              "id": "0",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "id",
+                  "type": "integer",
+                  "enum": [
+                    null,
+                    1
+                  ]
+                },
+                "policeHeading": {
+                  "id": "policeHeading",
+                  "type": "array",
+                  "items": {
+                    "id": "0",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "id": "id",
+                        "type": "integer",
+                        "enum": [
+                          null,
+                          1
+                        ]
+                      },
+                      "title": {
+                        "id": "title",
+                        "type": "string",
+                        "enum": [
+                          null,
+                          "police heading"
+                        ]
+                      },
+                      "policeParagraph": {
+                        "id": "policeParagraph",
+                        "type": "array",
+                        "items": {
+                          "id": "0",
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "id": "id",
+                              "type": "integer",
+                              "enum": [
+                                null,
+                                1
+                              ]
+                            },
+                            "content": {
+                              "id": "content",
+                              "type": "string",
+                              "enum": [
+                                null,
+                                "police Paragraph content"
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "id": "1",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "id",
+                  "type": "integer",
+                  "enum": [
+                    null,
+                    2
+                  ]
+                },
+                "policeHeading": {
+                  "id": "policeHeading",
+                  "type": "array",
+                  "items": {
+                    "id": "0",
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "id": "id",
+                        "type": "integer",
+                        "enum": [
+                          null,
+                          2
+                        ]
+                      },
+                      "title": {
+                        "id": "title",
+                        "type": "string",
+                        "enum": [
+                          null,
+                          "police heading"
+                        ]
+                      },
+                      "policeParagraph": {
+                        "id": "policeParagraph",
+                        "type": "array",
+                        "items": [
+                          {
+                            "id": "0",
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "id": "id",
+                                "type": "integer",
+                                "enum": [
+                                  null,
+                                  1
+                                ]
+                              },
+                              "content": {
+                                "id": "content",
+                                "type": "string",
+                                "enum": [
+                                  null,
+                                  "police Paragraph content"
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "id": "1",
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "id": "id",
+                                "type": "integer",
+                                "enum": [
+                                  null,
+                                  2
+                                ]
+                              },
+                              "content": {
+                                "id": "content",
+                                "type": "string",
+                                "enum": [
+                                  null,
+                                  "police Paragraph content"
+                                ]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "caseId",
+    "suspectId",
+    "urn",
+    "version",
+    "Idpc"
+  ]
+}

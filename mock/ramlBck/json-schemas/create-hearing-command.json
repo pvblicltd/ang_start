@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The aggregate id",
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "hearingName": {
+      "description": "The hearing name",
+      "type": "string"
+    },
+    "hearingType": {
+      "description": "The hearing type",
+      "type": "string"
+    },
+    "startDate": {
+      "description": "The start date",
+      "type": "string"
+    },
+    "active": {
+      "description": "Is the hearing active",
+      "type": "boolean"
+    },
+    "hearingNote": {
+      "description": "The hearing note",
+      "type": "string"
+    },
+    "caseId": {
+      "description": "The case ID",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "hearingName",
+    "hearingType",
+    "startDate",
+    "active",
+    "hearingNote",
+    "caseId"
+  ]
+}

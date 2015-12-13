@@ -68,7 +68,9 @@
     "postinstall": "bower install"
   },
   "dependencies": {
+    "express": "^4.13.3",
     "lodash": "^3.10.1",
+    "morgan": "^1.6.1",
     "nodemon": "^1.8.1",
     "path": "^0.12.7",
     "raml-mocker-server": "^0.1.4"

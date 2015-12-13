@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The aggregate id",
+      "type": "string"
+    },
+    "defendant": {
+      "description": "The defendant object",
+      "type": "object",
+      "properties": {
+        "foreName": {
+          "description": "The defendant forename",
+          "type": "string"
+        },
+        "lastName": {
+          "description": "The defendant last name",
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "description": "The defendant date of birth",
+          "type": "string"
+        }
+      }
+    },
+    "caseIdentity": {
+      "description": "The defendant caseIdentity object",
+      "type": "object",
+      "properties": {
+        "urn": {
+          "description": "The defendant urn",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "defendant",
+    "caseIdentity"
+  ]
+}

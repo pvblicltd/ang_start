@@ -1,0 +1,67 @@
+{
+    "caseId": "100",
+    "suspectId": "100",
+    "urn": "55DP0028115",
+    "version": 0,
+    "Idpc": {
+        "suspect": {
+            "id": 100,
+            "firstName": "mike",
+            "lastName": "smith",
+            "dateOfBirth": "1984-10-15",
+            "address": "suspect address",
+            "charges": [
+                {
+                    "code": "CCCJS",
+                    "description": "CCCJS Description",
+                    "anticipatedPlea": "Not Guilty",
+                    "anticipatedIssue": "Alibi",
+                    "chargeType": "proposed charge"
+                }
+            ]
+        },
+        "exhibits": [
+            {
+                "id": 1,
+                "reference": "dr123",
+                "description": "Interview with SHAIF"
+            }
+        ],
+        "policeNarrative": [
+            {
+                "id": 1,
+                "policeHeading": [
+                    {
+                        "id": 1,
+                        "title": "police heading",
+                        "policeParagraph": [
+                            {
+                                "id": 1,
+                                "content": "police Paragraph content"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "policeHeading": [
+                    {
+                        "id": 2,
+                        "title": "police heading",
+                        "policeParagraph": [
+                            {
+                                "id": 1,
+                                "content": "police Paragraph content"
+                            },
+                            {
+                                "id": 2,
+                                "content": "police Paragraph content"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

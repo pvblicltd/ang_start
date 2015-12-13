@@ -1,0 +1,51 @@
+#%RAML 0.8
+title: Defence Portal - CST Read Services API
+version: 1.0
+mediaType: appplication/json
+protocols: [ HTTP, HTTPS ]
+      
+documentation: 
+        - title:  Overview - Defence portal CST read services
+          content: List of cst read services api.
+                    
+baseUri: /dpp_cst_read/rest/1.0/cst/dpp
+
+/unrepresented/defendant/case/urn/{urn}/forename/{forename}/lastName/{lastName}/dob/{dob}:
+  displayName: Find an unrepresented defendant case.
+          
+  get:
+      description: Search for an unrepresented defendant case
+      responses:
+            500:
+                description: Internal Server Error
+            400:
+                description: Invalid search criteria.                    
+               
+            200:
+                description: OK        
+                body:
+                  application/json: 
+                      example: 
+                        !include json-examples/Case_Found.json
+                      schema: 
+                       !include  schema-examples/Case_Found_Schema.json
+                       
+/represented/cases:
+  displayName: Display all attached cases.
+          
+  get:
+      description:  List of cases
+      responses:
+            500:
+                description: Internal Server Error
+            400:
+                description: Invalid search criteria.                    
+            
+            200:
+                description: OK        
+                body:
+                  application/json: 
+                      example: 
+                        !include json-examples/List_Of_Cases.json 
+                      schema: 
+                       !include  schema-examples/List_Of_Cases_Schema.json                      

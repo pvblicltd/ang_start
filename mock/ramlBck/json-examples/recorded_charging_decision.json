@@ -1,0 +1,20 @@
+{
+  "id": "review234",
+  "version": 1,
+  "recordChargingDecision": [
+    {
+      "suspectId": 123,
+      "chargingDecision": {
+        "decision": "decision",
+        "authorisedCharges": [
+          {
+            "code": "CCCJS",
+            "description": "CCCJS Description",
+            "anticipatedPlea": "Not Guilty",
+            "anticipatedIssue": "Alibi"
+          }
+        ]
+      }
+    }
+  ]
+}

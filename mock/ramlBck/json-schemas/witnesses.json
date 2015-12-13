@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "array",
+  "items": {
+    "id": "/0",
+    "type": "object",
+    "properties": {
+      "id": {
+        "id": "/0/id",
+        "type": "string"
+      },
+      "personId": {
+        "id": "/0/personId",
+        "type": "string"
+      },
+      "policePersonId": {
+        "id": "/0/policePersonId",
+        "type": "string"
+      },
+      "statements": {
+        "id": "/0/statements",
+        "type": "array",
+        "items": [
+          {
+            "id": "/0/statements/0",
+            "type": "string"
+          },
+          {
+            "id": "/0/statements/1",
+            "type": "string"
+          }
+        ]
+      },
+      "classification": {
+        "id": "/0/classification",
+        "type": "object",
+        "properties": {
+          "isVictim": {
+            "id": "/0/classification/isVictim",
+            "type": "boolean"
+          },
+          "isEntitlementRequired": {
+            "id": "/0/classification/isEntitlementRequired",
+            "type": "boolean"
+          },
+          "witnessExpertise": {
+            "id": "/0/classification/witnessExpertise",
+            "type": "string"
+          },
+          "witnessStatus": {
+            "id": "/0/classification/witnessStatus",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "required": [
+      "id",
+      "personId",
+      "policePersonId",
+      "statements",
+      "classification"
+    ]
+  },
+  "required": [
+    "0"
+  ]
+}
+

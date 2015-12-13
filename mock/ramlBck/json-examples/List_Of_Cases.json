@@ -1,0 +1,11 @@
+[  
+   {  
+      "aggregateId":"1",
+      "foreName":"fore",
+      "lastName":"last",
+      "dateOfBirth":"1980-01-01",
+      "urn":"URN",
+      "nextCourtDate":null,
+      "associatedOn":"2015-01-01"
+   }
+]
