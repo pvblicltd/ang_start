@@ -105,8 +105,7 @@
                     root: src,
                     port: 9009,
                     routes: {
-                        '/bower_components': 'bower_components',
-                        '/dist': 'src'
+                        '/dist': 'dist'
                     },
                     index: 'index.html'
                 },
