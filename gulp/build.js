@@ -9,29 +9,30 @@ module.exports = function(){
   gulp.task('build', ['clean-dist'], function(cb) {
     if(gutil.env.production) {
       runSequence([
+        'copy-images',
         'build-css-app',
         'build-css-vendor',
-        'build-js-app',
+        //'build-js-app',
         'build-js-vendor',
         'copy-config',
         'copy-favicon',
         'copy-fonts',
         'copy-html',
-        'copy-images',
+        'copy-js-app',
         'copy-cppui-assets',
         'copy-localisation'
       ], 'build-index', cb);
     } else {
       runSequence([
+        'copy-images',
         'build-css-app',
         'build-css-vendor',
-        'cache-templates',
+        //'cache-templates',
         'copy-js-vendor',
         'copy-config',
+        'copy-favicon',
         'copy-fonts',
         'copy-html',
-        'copy-favicon',
-        'copy-images',
         'copy-js-app',
         'copy-cppui-assets',
         'copy-localisation'
