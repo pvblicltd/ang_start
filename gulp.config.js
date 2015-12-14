@@ -45,6 +45,7 @@
         'app/**/*.js',
         'external/**/*.js',
         'app/config/*.js',
+         '!app/**/*.controller.js',
         '!**/*.spec.js',
         '!**/*.prot.js',
         '!**/*.page.js'

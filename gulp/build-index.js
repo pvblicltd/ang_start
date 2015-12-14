@@ -9,16 +9,23 @@ var $           = require('gulp-load-plugins')({ lazy: true });
 module.exports = function(config, log){
   gulp.task('build-index', function() {
     var app, dist = {read: false, cwd: config.build_destination};
-    if($.util.env.production) {
-      app = gulp.src(config.appProd, dist);
-    } else {
-      app = merge(
-        gulp.src(config.allAppCss, dist),
-        gulp.src(config.allJs, {cwd: config.build_destination})
-          .pipe($.plumber())
-          .pipe($.angularFilesort())
-      );
-    }
+    //if($.util.env.production) {
+    //  app = gulp.src(config.appProd, dist);
+    //} else {
+    //  app = merge(
+    //    gulp.src(config.allAppCss, dist),
+    //    gulp.src(config.allJs, {cwd: config.build_destination})
+    //      .pipe($.plumber())
+    //      .pipe($.angularFilesort())
+    //  );
+    //}
+    app = merge(
+      gulp.src(config.allAppCss, dist),
+      gulp.src(config.allJs, {cwd: config.build_destination})
+        .pipe($.plumber())
+        .pipe($.angularFilesort())
+    );
+
     return gulp.src(config.indexHtml)
       // [production, development] vendor styles
       .pipe($.inject(
@@ -50,17 +57,17 @@ module.exports = function(config, log){
         }
       ))
       // [production] config.js - a timestamp revision is appended to cache bust
-      .pipe($.if($.util.env.production, $.inject(
-        gulp.src(config.allConfigJs, dist), {
-          name: 'config',
-          addRootSlash: false,
-          transform: function(filepath) {
-            var now = new Date().getTime();
-            return '<script src="' + filepath + '?v=' + now + '"></script>';
-          }
-        }
-      )))
-      .pipe($.if($.util.env.production, $.minifyHtml({conditionals: true})))
+      //.pipe($.if($.util.env.production, $.inject(
+      //  gulp.src(config.allConfigJs, dist), {
+      //    name: 'config',
+      //    addRootSlash: false,
+      //    transform: function(filepath) {
+      //      var now = new Date().getTime();
+      //      return '<script src="' + filepath + '?v=' + now + '"></script>';
+      //    }
+      //  }
+      //)))
+      //.pipe($.if($.util.env.production, $.minifyHtml({conditionals: true})))
       .pipe(gulp.dest(config.build_destination))
       .pipe($.connect.reload());
   });
