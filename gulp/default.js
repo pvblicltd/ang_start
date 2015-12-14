@@ -11,7 +11,8 @@ module.exports = function (config, log) {
             runSequence('jshint', 'build', cb);
         }
         else { //development build
-            runSequence(['jshint', 'build'], 'serve', 'watch', cb);
+            //runSequence(['jshint', 'build'], 'serve', 'watch', cb);
+            runSequence(['jshint', 'build'], 'serve-dev', 'watch', cb);
         }
     });
 };

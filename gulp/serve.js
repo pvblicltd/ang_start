@@ -36,7 +36,6 @@ module.exports = function (config, log) {
 
         startBrowserSync(
             config.serve.dev.root,
-            config.serve.dev.routes,
             config.serve.dev.index,
             proxy,
             true
@@ -46,7 +45,7 @@ module.exports = function (config, log) {
     // gulp.task('serve:dist', ['start-mocks'], function () {}) // TODO
     // gulp.task('serve:prod', function () {} ) // TODO
 
-    function startBrowserSync(baseDir, routes, index, proxy, ghostModeEnabled) {
+    function startBrowserSync(baseDir, index, proxy, ghostModeEnabled) {
 
         if (browserSync.active) {
             return;
@@ -61,7 +60,6 @@ module.exports = function (config, log) {
             ],
             server: {
                 baseDir: baseDir,
-                routes: routes,
                 index: index,
                 middleware: proxy
             },

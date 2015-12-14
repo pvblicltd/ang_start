@@ -14,63 +14,63 @@
         var wiredep = require('wiredep');
         var packageJson = require('./package.json');
 
-    var config = {
-      build_dir: dist,
-      build_destination: 'dist',
-      styles: 'src/assets/styles/app.less',
-      distStyles: './dist/styles',
-      vendorStyles: 'src/assets/styles/vendor.less',
-      imagesSrc: 'src/images/**',
-      bowerFiles: '**/*.js',
-      allLessFiles: [
-        'src/**/*.less',
-        '!src/styles/vendor.less'
-      ],
-      allJsButTest: [
-        'src/**/*.js',
-        '!src/**/*.spec.js',
-        '!src/**/*.prot.js',
-        '!src/**/*.page.js'
-      ],
-      allTestFiles: [
-        'src/**/*.spec.js'
-      ],
-      allAppCss: '**/app*.css',
-      distScripts: 'dist/scripts',
-      distVendor: 'dist/vendor',
-      distLanguages: 'dist/languages',
-      allLangualgesFiles: 'src/app/**/*.lang.json',
-      allJs: ['app/**/*.js', 'external/**/*.js', '!app/**/*.controller.js'],
-      allJsFilesApartFromTest: [
-        'app/**/*.js',
-        'external/**/*.js',
-        'app/config/*.js',
-         '!app/**/*.controller.js',
-        '!**/*.spec.js',
-        '!**/*.prot.js',
-        '!**/*.page.js'
-      ],
-      distApp: dist + 'app',
-      allAppJs: 'src/app/**/*.js',
-      fontFiles: '**/*.{otf,eot,svg,ttf,woff,woff2}',
-      cppAssets: 'bower_components/cpp-ui/dist/assets/**/*',
-      bowerCss:'bower_components/**/*.css',
-      appProd: '**/app*.*',
-      indexHtml: 'src/index.html',
-      allHtml: '**/*.html',
-      vendorCss: '**/vendor*.css',
-      prodVendorJs: 'scripts/vendor*.js',
-      allConfigJs: 'src/app/config/*.js',
-      configJs: dist + '**/config.module.js',
-      allImagesFiles: '**/*.{png,jpg,jpeg,gif}',
-      distImages: 'dist/images',
-      banner: '/*! Version ' + packageJson.version + ' - ' + new Date().toString() + ' */\n',
-      version: packageJson.version,
-      src_dir: src,
-      root: root,
-      reports: reports,
-      e2e_report_dir: reports + 'e2e/',
-      tests_report_dir: reports + 'coverage/',
+        var config = {
+            build_dir: dist,
+            build_destination: 'dist',
+            styles: 'src/assets/styles/app.less',
+            distStyles: './dist/styles',
+            vendorStyles: 'src/assets/styles/vendor.less',
+            imagesSrc: 'src/images/**',
+            bowerFiles: '**/*.js',
+            allLessFiles: [
+              'src/**/*.less',
+              '!src/styles/vendor.less'
+            ],
+            allJsButTest: [
+              'src/**/*.js',
+              '!src/**/*.spec.js',
+              '!src/**/*.prot.js',
+              '!src/**/*.page.js'
+            ],
+            allTestFiles: [
+              'src/**/*.spec.js'
+            ],
+            allAppCss: '**/app*.css',
+            distScripts: 'dist/scripts',
+            distVendor: 'dist/vendor',
+            distLanguages: 'dist/languages',
+            allLangualgesFiles: 'src/app/**/*.lang.json',
+            allJs: ['app/**/*.js', 'external/**/*.js', '!app/**/*.controller.js'],
+            allJsFilesApartFromTest: [
+              'app/**/*.js',
+              'external/**/*.js',
+              'app/config/*.js',
+               '!app/**/*.controller.js',
+              '!**/*.spec.js',
+              '!**/*.prot.js',
+              '!**/*.page.js'
+            ],
+            distApp: dist + 'app',
+            allAppJs: 'src/app/**/*.js',
+            fontFiles: '**/*.{otf,eot,svg,ttf,woff,woff2}',
+            cppAssets: 'bower_components/cpp-ui/dist/assets/**/*',
+            bowerCss: 'bower_components/**/*.css',
+            appProd: '**/app*.*',
+            indexHtml: 'src/index.html',
+            allHtml: '**/*.html',
+            vendorCss: '**/vendor*.css',
+            prodVendorJs: 'scripts/vendor*.js',
+            allConfigJs: 'src/app/config/*.js',
+            configJs: dist + '**/config.module.js',
+            allImagesFiles: '**/*.{png,jpg,jpeg,gif}',
+            distImages: 'dist/images',
+            banner: '/*! Version ' + packageJson.version + ' - ' + new Date().toString() + ' */\n',
+            version: packageJson.version,
+            src_dir: src,
+            root: root,
+            reports: reports,
+            e2e_report_dir: reports + 'e2e/',
+            tests_report_dir: reports + 'coverage/',
 
             globs: {
                 js: [
@@ -103,11 +103,8 @@
              */
             serve: {
                 dev: {
-                    root: src,
+                    root: dist,
                     port: 9009,
-                    routes: {
-                        '/dist': 'dist'
-                    },
                     index: 'index.html'
                 },
                 dist: {
