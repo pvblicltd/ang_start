@@ -6,7 +6,6 @@
             'ui.router',
             'oc.lazyLoad',
             'cpp-ui-spa-master.config',
-            'cpp-ui-spa-master.case',
             'cpp-ui-spa-master.routes',
             'ui.bootstrap',
             'ui.cpp',
@@ -26,7 +25,7 @@
         .value('routesConfig', [])
         .run(runBlock);
 
-    function runBlock($rootScope, $state, locale, routesConfig, dynamicStateProvider) {
+    function runBlock($rootScope, locale, routesConfig, dynamicStateProvider) {
 
       _.each(routesConfig, function(state){
         dynamicStateProvider.addState(state);

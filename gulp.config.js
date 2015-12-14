@@ -40,15 +40,23 @@
       distVendor: 'dist/vendor',
       distLanguages: 'dist/languages',
       allLangualgesFiles: 'src/app/**/*.lang.json',
-      allJs: ['app/**/*.js', 'external/**/*.js', '!app/**/*.controller.js'],
-      allJsFilesApartFromTest: [
-        'app/**/*.js',
-        'external/**/*.js',
+      allJs: [
+        'app/app.bootstrap.js',
+        'app/app.module.js',
+        'app/routes/**/*.js',
         'app/config/*.js',
-         '!app/**/*.controller.js',
-        '!**/*.spec.js',
-        '!**/*.prot.js',
-        '!**/*.page.js'
+        'external/**/*.js'
+      ],
+      allJsFilesApartFromTest: [
+        'app/app.bootstrap.js',
+        'app/app.module.js',
+        'app/routes/**/*.js',
+        'external/**/*.js'
+        //'app/config/*.js',
+        // '!app/**/*.controller.js',
+        //'!**/*.spec.js',
+        //'!**/*.prot.js',
+        //'!**/*.page.js'
       ],
       distApp: dist + 'app',
       allAppJs: 'src/app/**/*.js',

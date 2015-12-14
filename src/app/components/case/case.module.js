@@ -3,7 +3,8 @@
 
   angular
     .module('cpp-ui-spa-master.case', [
-      'cpp-ui-spa-master.case.example'
+      'app/components/case/case-example.directive.js',
+      'app/components/case/case-example.service.js'
     ]);
 
 }());

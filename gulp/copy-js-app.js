@@ -8,7 +8,8 @@ var $     = require('gulp-load-plugins')({ lazy: true });
 module.exports = function(config){
   gulp.task('copy-js-app', function() {
     return gulp.src(config.allJsButTest)
-      //.pipe($.if($.util.env.production, $.uglify()))
+      .pipe($.if($.util.env.production, $.ngAnnotate({single_quotes: true})))
+      .pipe($.if($.util.env.production, $.uglify()))
       .pipe($.plumber())
       .pipe($.cached('js'))
       .pipe(gulp.dest(config.build_destination))
