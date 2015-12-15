@@ -2,8 +2,8 @@
     'use strict';
 
     var gulp = require('gulp'),
-      config = require('./gulp.config.js')(),
-      wrench = require('wrench');
+        config = require('./gulp.config.js')(),
+        wrench = require('wrench');
 
     var $ = require('gulp-load-plugins')({ lazy: true });
 

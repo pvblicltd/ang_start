@@ -17,6 +17,11 @@ module.exports = function(config, log){
         clean(files, done);
     });
 
+    // this is used by deployment builds
+    gulp.task('clean-config', function (done) {
+        del(['dist/**/config.module.js'], done);
+    });
+
     function clean(path, done) {
         log('Cleaning: ' + path);
         del(path, done);

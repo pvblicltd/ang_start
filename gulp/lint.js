@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     map = require('map-stream'),
     $ = require('gulp-load-plugins')({ lazy: true });
 
+
 module.exports = function (config, log) {
 
     gulp.task('check-commit', ['lint-break', 'test']);
