@@ -72,9 +72,10 @@
     "postinstall": "bower install --allow-root --config.interactive=false",
     "check-commit": "gulp check-commit --verbose"
   },
-   "pre-commit": [
-     "check-commit"
-  ],
+  "pre-commit": {
+    "run": "check-commit",
+    "silent":  true
+  },
   "dependencies": {
     "express": "^4.13.3",
     "lodash": "^3.10.1",
