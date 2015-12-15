@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')({ lazy: true });
 
 module.exports = function (config, log) {
-    //gulp.task('check-commit', ['lint-break', 'test']);
+
+    gulp.task('check-commit', ['lint-break', 'test']);
 
     gulp.task('lint', function () {
         log('Analysing source with JSHint and JSCS');

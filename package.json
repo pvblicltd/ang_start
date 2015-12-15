@@ -56,6 +56,8 @@
     "npm": "^3.5.0",
     "open": "0.0.5",
     "phantomjs": "^1.9.17",
+    "pre-commit": "^1.1.2",
+    "raml-mocker-server": "^0.1.4",
     "run-sequence": "^1.1.0",
     "sinon": "^1.15.3",
     "stream-series": "^0.1.1",
@@ -66,15 +68,18 @@
   },
   "scripts": {
     "start": "node_modules/.bin/nodemon ./mock/server.js",
-    "test": "test",
-    "postinstall": "bower install"
+    "test": "gulp test",
+    "postinstall": "bower install --allow-root --config.interactive=false",
+    "check-commit": "gulp check-commit --verbose"
   },
+   "pre-commit": [
+     "check-commit"
+  ],
   "dependencies": {
     "express": "^4.13.3",
     "lodash": "^3.10.1",
     "morgan": "^1.6.1",
     "nodemon": "^1.8.1",
-    "path": "^0.12.7",
-    "raml-mocker-server": "^0.1.4"
+    "path": "^0.12.7"
   }
 }
