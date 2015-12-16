@@ -13,6 +13,8 @@ cppapi/
 node_modules
 npm-debug.*
 
+# Unique file for devs data
+profile.js
 
 ### SublimeText ###
 # cache files for sublime text
