@@ -57,7 +57,7 @@
     "npm": "^3.5.0",
     "open": "0.0.5",
     "phantomjs": "^1.9.17",
-    "pre-push": "^0.1.1",
+    "pre-git": "^3.1.1",
     "raml-mocker-server": "^0.1.4",
     "run-sequence": "^1.1.0",
     "sinon": "^1.15.3",
@@ -73,14 +73,22 @@
     "postinstall": "bower install --allow-root --config.interactive=false",
     "check-commit": "gulp check-commit --verbose"
   },
-  "pre-push": {
-    "run": "check-commit"
-  },
   "dependencies": {
     "express": "^4.13.3",
     "lodash": "^3.10.1",
     "morgan": "^1.6.1",
     "nodemon": "^1.8.1",
     "path": "^0.12.7"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": [ ],
+      "pre-commit": [ ],
+      "pre-push": [
+        "gulp check-commit --verbose"
+      ],
+      "post-commit": [ ],
+      "post-merge": [ ]
+    }
   }
 }
