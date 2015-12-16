@@ -1,0 +1,156 @@
+#%RAML 0.8
+title: Pre-Charge & Charge - CST Read Service API
+version: v1
+mediaType: appplication/json
+protocols: [ HTTP ]
+documentation: 
+   - title:  CST Read Service
+     content: Overview of all CST Read Services
+          
+baseUri: /pcc-cst-read/rest/v1/cst
+
+/charging-case/{caseId}/suspects:  
+  
+    displayName: Get a case by it's mandatory fields
+    
+    uriParameters:
+      caseId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true
+        
+    get:
+      description: Get list of Suspects based on Case Id    
+      responses: 
+        500:
+           description: Internal Server Error
+        404:
+           description: The specified stream could not be found.
+        200:
+           description: OK      
+           body:
+             application/json:
+               example: 
+                 !include json-examples/charging_case_suspects.json  
+               schema: 
+                 !include json-schemas/charging_case_suspects_schema.json  
+ 
+/charging-case/{caseId}/suspect/{suspectId}/charge/{chargeId}/anticipated-plea:                    
+  
+    displayName: Get anticipated plea and anticipated issue by it's mandatory fields
+    
+    uriParameters:
+      caseId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true
+      suspectId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true
+      chargeId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true
+        
+    get:
+      description: Get anticipated plea and anticipated issue by caseId, suspectId and chargeId
+      responses: 
+        500:
+           description: Internal Server Error
+        404:
+           description: The specified stream could not be found.
+        200:
+           description: OK      
+           body:
+             application/json:
+               example: 
+                 !include json-examples/anticipated_plea.json  
+               schema: 
+                 !include json-schemas/anticipated_plea_schema.json  
+                        
+/review/{reviewId}/draft-idpc:  
+  
+    displayName: Get list of suspects, exhibits & proposed Charges by reviewId
+    
+    uriParameters:
+      reviewId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true
+        
+    get:
+      description: Get list of suspects, exhibits & proposed Charges based on reviewId    
+      responses: 
+        500:
+           description: Internal Server Error
+        404:
+           description: The specified stream could not be found.
+        200:
+           description: OK      
+           body:
+             application/json:
+               example: 
+                 !include json-examples/draft_idpc.json  
+               schema: 
+                 !include json-schemas/draft_idpc_schema.json  
+
+                        
+/charging-case/{caseId}/suspect/{suspectId}/idpc:                    
+  
+    displayName: Get list of suspects, exhibits, charges, policeNarrative, police heading and police paragraph content based on reviewId and suspectId.
+    
+    uriParameters:
+      caseId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true
+      suspectId:
+        type: string
+        maxLength: 11
+        minLength: 1
+        required: true            
+
+    get:
+      description: Get list of suspects, exhibits, charges, policeNarrative, police heading and police paragraph content based on reviewId and suspectId.
+      responses: 
+        500:
+           description: Internal Server Error
+        404:
+           description: The specified stream could not be found.
+        200:
+           description: OK      
+           body:
+             application/json:
+               example: 
+                 !include json-examples/charging_case_idpc.json   
+               schema: 
+                 !include json-schemas/charging_case_idpc_schema.json   
+
+  
+/charging-case:
+  
+  displayName: get the list of cases.
+          
+  get:
+      description:  List of cases
+      responses:
+            500:
+                description: Internal Server Error
+            400:
+                description: IThe specified stream could not be found.                  
+            200:
+                description: OK        
+                body:
+                  application/json: 
+                      example: 
+                        !include json-examples/charging_case_list_of_cases.json
+                      schema: 
+                       !include  json-schemas/charging_case_list_of_cases_Schema.json                      
+                        

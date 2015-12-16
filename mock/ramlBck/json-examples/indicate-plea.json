@@ -1,0 +1,12 @@
+{
+  "version": 12,
+  "indicatedPlea": {
+    "type": "NOT_GUILTY",
+	"issues": [
+		{
+		  "type": "ALIBI",
+		  "details": "Defendant said he was not in the vicinity at the time of the incident."
+		}
+    ]
+ }
+}

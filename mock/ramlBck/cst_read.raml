@@ -1,0 +1,55 @@
+#%RAML 0.8
+title: OCP Read API (CST)
+baseUri: http://localhost:8080/structure-cst-read
+version: v0.1
+mediaType: application/json
+protocols: [ HTTP, HTTPS ]
+
+documentation: 
+  - title: Category
+    content : Consumer Service Tier
+  - title: Status
+    content : In development
+  - title: Description
+    content: |
+       Welcome to Structure context Read API Documentation.
+       
+  - title: Context
+    content : Provides data for case.
+  - title: Security Policy
+    content: TBC
+  - title: Where Used
+    content: https://codereview.dev2.cloud.local/#/admin/projects/C2I
+  - title: Source Code
+    content : https://codereview.dev2.cloud.local/#/admin/projects/C2I
+  - title: Artefacts
+    content: XXX
+  - title: Designs
+    content: https://triadmoj.atlassian.net/wiki/display/CPP/CQRS+Framework
+  - title: Test Cases
+    content: Pointers to the relevant Test Cases, etc. for the Service.
+
+/cases/{caseurn}:
+    description: Get case information
+    get:
+        description: Get case information
+        responses:
+          404:
+            description: The specified case data could not be found.
+          200:
+            body:
+               schema: !include json-schemas/case.json
+               example: !include json-examples/case.json
+
+/cases/{caseid}/witnesses:
+  description: Get case information
+  get:
+    description: Get case information
+    responses:
+      404:
+           description: The specified case data could not be found.
+      200:
+        body:
+            schema: !include json-schemas/witnesses.json
+            example: !include json-examples/witnesses.json
+

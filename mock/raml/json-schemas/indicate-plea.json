@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "indicatedPlea": {
+      "id": "/indicatedPlea",
+      "type": "object",
+      "properties": {
+        "type": {
+          "id": "/indicatedPlea/type",
+          "type": "string"
+        },
+        "issues": {
+          "id": "/indicatedPlea/issues",
+          "type": "array",
+          "items": {
+            "id": "/indicatedPlea/issues/0",
+            "type": "object",
+            "properties": {
+              "type": {
+                "id": "/indicatedPlea/issues/0/type",
+                "type": "string"
+              },
+              "details": {
+                "id": "/indicatedPlea/issues/0/details",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "version",
+    "indicatedPlea"
+  ]
+}

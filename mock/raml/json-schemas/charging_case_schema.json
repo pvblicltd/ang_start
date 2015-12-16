@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+        "caseId": {
+          "type": "string"
+        },
+        "urn": {
+          "type": "string"
+        },
+        "exhibits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "exhibitId": {
+                "type": "integer"
+              },
+              "exhibitRef": {
+                "type": "string"
+              },
+              "used": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "policeNarrative": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": {
+                "type": "string"
+              },
+              "paragraphs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+  },
+  "required": [
+    "id",
+    "version"
+  ]
+}

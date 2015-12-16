@@ -1,0 +1,562 @@
+<!DOCTYPE HTML><html><head><title>Online Case Progression Service - Write API documentation</title><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="generator" content="https://github.com/kevinrenskers/raml2html 2.1.0"><link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css"><script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script><script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script><script type="text/javascript">
+      $(document).ready(function() {
+        $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        $('[data-toggle]').click(function() {
+          var selector = $(this).data('target') + ' pre code';
+          $(selector).each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+
+        // open modal on hashes like #_action_get
+        $(window).bind('hashchange', function(e) {
+          var anchor_id = document.location.hash.substr(1); //strip #
+          var element = $('#' + anchor_id);
+
+          // do we have such element + is it a modal?  --> show it
+          if (element.length && element.hasClass('modal')) {
+            element.modal('show');
+          }
+        });
+
+        // execute hashchange on first page load
+        $(window).trigger('hashchange');
+
+        // remove url fragment on modal hide
+        $('.modal').on('hidden.bs.modal', function() {
+          if(history && history.replaceState) {
+            history.replaceState({}, '', '#');
+          }
+        });
+      });
+    </script><style>
+      .hljs {
+        background: transparent;
+      }
+      .parent {
+        color: #999;
+      }
+      .list-group-item > .badge {
+        float: none;
+        margin-right: 6px;
+      }
+      .panel-title > .methods {
+        float: right;
+      }
+      .badge {
+        border-radius: 0;
+        text-transform: uppercase;
+        width: 70px;
+        font-weight: normal;
+        color: #f3f3f6;
+        line-height: normal;
+      }
+      .badge_get {
+        background-color: #63a8e2;
+      }
+      .badge_post {
+        background-color: #6cbd7d;
+      }
+      .badge_put {
+        background-color: #22bac4;
+      }
+      .badge_delete {
+        background-color: #d26460;
+      }
+      .badge_patch {
+        background-color: #ccc444;
+      }
+      .list-group, .panel-group {
+        margin-bottom: 0;
+      }
+      .panel-group .panel+.panel-white {
+        margin-top: 0;
+      }
+      .panel-group .panel-white {
+        border-bottom: 1px solid #F5F5F5;
+        border-radius: 0;
+      }
+      .panel-white:last-child {
+        border-bottom-color: white;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .panel-white .panel-heading {
+        background: white;
+      }
+      .tab-pane ul {
+        padding-left: 2em;
+      }
+      .tab-pane h2 {
+        font-size: 1.2em;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ddd;
+      }
+      .tab-pane h3 {
+        font-size: 1.1em;
+      }
+      .tab-content {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+      #sidebar {
+        margin-top: 30px;
+        padding-right: 5px;
+        overflow: auto;
+        height: 90%;
+      }
+      .top-resource-description {
+        border-bottom: 1px solid #ddd;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description {
+        border-bottom: 1px solid #fcfcfc;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description p:last-child {
+        margin: 0;
+      }
+      .list-group .badge {
+        float: left;
+      }
+      .method_description {
+        margin-left: 85px;
+      }
+      .method_description p:last-child {
+        margin: 0;
+      }
+      .list-group-item {
+        cursor: pointer;
+      }
+      .list-group-item:hover {
+        background-color: #f5f5f5;
+      }
+    </style></head><body data-spy="scroll" data-target="#sidebar"><div class="container"><div class="row"><div class="col-md-9" role="main"><div class="page-header"><h1>Online Case Progression Service - Write API documentation <small>version v0.1</small></h1><p>http://localhost:8080/ocp-write-cst/rest</p><h3 id="Category"><a href="#Category">Category</a></h3><p>Consumer Service Tier</p><h3 id="Status"><a href="#Status">Status</a></h3><p>In development</p><h3 id="Description"><a href="#Description">Description</a></h3><p>Welcome to Online Case Progression Service API Documentation. This API allows you to send commands to be handled by a command handler (DOT) which will in turn generate events to apply to the domain model, store the event in an event store and publish the event to an event lister to be read.</p><h3 id="Context"><a href="#Context">Context</a></h3><p>Provides data for case management screens for defence and prosecution Supports the Steel Thread screenflow of a <em>Defence Solicitor</em> viewing the details of the case and submitting an indicated plea and confirming they are ok for the case to move to court. The <em>Prosecution</em> then views the case and signals they are ok to proceed to court. The <em>Legal Advisor</em> then reviews the cases and issues a set of directions against the case.</p><h3 id="Security-Policy"><a href="#Security-Policy">Security Policy</a></h3><p>TBC</p><h3 id="Where-Used"><a href="#Where-Used">Where Used</a></h3><p><a href="https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2">https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2</a></p><h3 id="Source-Code"><a href="#Source-Code">Source Code</a></h3><p><a href="https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2">https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2</a></p><h3 id="Artefacts"><a href="#Artefacts">Artefacts</a></h3><p><a href="https://libraries.dev2.cloud.local/artifactory/wars-local/OCP">https://libraries.dev2.cloud.local/artifactory/wars-local/OCP</a></p><h3 id="Designs"><a href="#Designs">Designs</a></h3><p><a href="https://triadmoj.atlassian.net/wiki/display/CPP/CQRS+Framework">https://triadmoj.atlassian.net/wiki/display/CPP/CQRS+Framework</a></p><h3 id="Test-Cases"><a href="#Test-Cases">Test Cases</a></h3><p>Pointers to the relevant Test Cases, etc. for the Service</p></div><div class="panel panel-default"><div class="panel-heading"><h3 id="routing_cases" class="panel-title">/routing-cases</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post to this entry point to create a case</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_routing_cases"><span class="parent"></span>/routing-cases</a> <span class="methods"><a href="#routing_cases_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_routing_cases" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#routing_cases_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="routing_cases_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/routing-cases</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#routing_cases_post_request" data-toggle="tab">Request</a></li><li><a href="#routing_cases_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="routing_cases_post_request"><h3>Headers</h3><ul><li><strong>Accept</strong>: <em>(string)</em><p>Content negotiation</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the request body</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Accept-Encoding</strong>: <em>(string)</em><p>Particularly for indicating gzip compression</p></li><li><strong>Authorization</strong>: <em>(string)</em><p>HTTP Authorization controls</p><p><strong>Example</strong>:</p><pre>Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</pre></li><li><strong>CP-Version</strong>: <em>(string)</em><p>Platform service sub-version indicator, in the form of a date YYYY-MM-DD.</p><p><strong>Example</strong>:</p><pre>Thu Aug 27 2015 01:00:00 GMT+0100 (BST)</pre></li><li><strong>X-UID</strong>: <em>(string)</em><p>IdAM User ID.</p><p><strong>Example</strong>:</p><pre>8fd7b660-b755-413c-8073-0648baf312a6</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "urn": {
+      "id": "/urn",
+      "type": "string"
+    },
+    "caseId": {
+      "id": "/caseId",
+      "type": "integer"
+    },
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "defendants": {
+      "id": "/defendants",
+      "type": "array",
+      "items": {
+        "id": "/defendants/0",
+        "type": "object",
+        "properties": {
+          "id": {
+            "id": "/defendants/0/id",
+            "type": "integer"
+          },
+          "firstName": {
+            "id": "/defendants/0/firstName",
+            "type": "string"
+          },
+          "lastName": {
+            "id": "/defendants/0/lastName",
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "id": "/defendants/0/dateOfBirth",
+            "type": "string"
+          },
+          "charges": {
+            "id": "/defendants/0/charges",
+            "type": "array",
+            "items": {
+              "id": "/defendants/0/charges/0",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "id": "/defendants/0/charges/0/id",
+                  "type": "integer"
+                },
+                "description": {
+                  "id": "/defendants/0/charges/0/description",
+                  "type": "string"
+                },
+                "anticipatedPlea": {
+                  "id": "/defendants/0/charges/0/anticipatedPlea",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "id": "/defendants/0/charges/0/anticipatedPlea/type",
+                      "type": "string"
+                    },
+                    "issues": {
+                      "id": "/defendants/0/charges/0/anticipatedPlea/issues",
+                      "type": "array",
+                      "items": {
+                        "id": "/defendants/0/charges/0/anticipatedPlea/issues/0",
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "id": "/defendants/0/charges/0/anticipatedPlea/issues/0/type",
+                            "type": "string"
+                          },
+                          "details": {
+                            "id": "/defendants/0/charges/0/anticipatedPlea/issues/0/details",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "urn",
+    "caseId",
+    "id",
+    "version",
+    "defendants"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "urn": "T21098",
+  "caseId": 11,
+  "id": "19",
+  "version": 12,
+  "defendants": [
+    {
+      "id": 20,
+      "firstName": "Joe",
+      "lastName": "Bloggs",
+      "dateOfBirth": "1990-01-01T00:00:00Z",
+      "charges": [
+        {
+		 "id":21,
+         "description": "Common assault on 13 March 2015",
+         "anticipatedPlea": {
+            "type": "GUILTY",
+   "issues": [
+       {
+        "type": "ALIBI",
+        "details": "Defendant said he was not in the vicinity at the time of the incident."
+       }
+   ]
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre></div><div class="tab-pane" id="routing_cases_post_response"><h2>HTTP status code <a href="http://httpstatus.es/202" target="_blank">202</a></h2><p>The request has been accepted for processing, but the processing has not been completed</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+   "UUID":"5f347ceb-b7d2-478d-bc7a-d2e0c5a937a3"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Provided information is not schema compliant.</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Invalid user data",
+  "stackTrace":""uk.gov.moj.uis.cst.write.app.exceptions.JsonSchemaException: Invalid user data..."   
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Unexcepted error in the service</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Unexpected error",
+  "stackTrace":"java.lang.Exception : Something went wrong
+    .....
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:497)
+    java.lang.Thread.run(Thread.java:745)"   
+}</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea" class="panel-title">/routing-cases/{aggregateCaseId}/defendants/{defendantId}/charges/{chargeId}/indicate-plea</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post to indicate a plea against a defendent charge</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea"><span class="parent"></span>/routing-cases/{aggregateCaseId}/defendants/{defendantId}/charges/{chargeId}/indicate-plea</a> <span class="methods"><a href="#routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/routing-cases/{aggregateCaseId}/defendants/{defendantId}/charges/{chargeId}/indicate-plea</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post_request" data-toggle="tab">Request</a></li><li><a href="#routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post_request"><h3>URI Parameters</h3><ul><li><strong>aggregateCaseId</strong>: <em>required (string)</em></li><li><strong>defendantId</strong>: <em>required (string)</em></li><li><strong>chargeId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Accept</strong>: <em>(string)</em><p>Content negotiation</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the request body</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Accept-Encoding</strong>: <em>(string)</em><p>Particularly for indicating gzip compression</p></li><li><strong>Authorization</strong>: <em>(string)</em><p>HTTP Authorization controls</p><p><strong>Example</strong>:</p><pre>Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</pre></li><li><strong>CP-Version</strong>: <em>(string)</em><p>Platform service sub-version indicator, in the form of a date YYYY-MM-DD.</p><p><strong>Example</strong>:</p><pre>Thu Aug 27 2015 01:00:00 GMT+0100 (BST)</pre></li><li><strong>X-UID</strong>: <em>(string)</em><p>IdAM User ID.</p><p><strong>Example</strong>:</p><pre>8fd7b660-b755-413c-8073-0648baf312a6</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "indicatedPlea": {
+      "id": "/indicatedPlea",
+      "type": "object",
+      "properties": {
+        "type": {
+          "id": "/indicatedPlea/type",
+          "type": "string"
+        },
+        "issues": {
+          "id": "/indicatedPlea/issues",
+          "type": "array",
+          "items": {
+            "id": "/indicatedPlea/issues/0",
+            "type": "object",
+            "properties": {
+              "type": {
+                "id": "/indicatedPlea/issues/0/type",
+                "type": "string"
+              },
+              "details": {
+                "id": "/indicatedPlea/issues/0/details",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "version",
+    "indicatedPlea"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "version": 12,
+  "indicatedPlea": {
+    "type": "NOT_GUILTY",
+	"issues": [
+		{
+		  "type": "ALIBI",
+		  "details": "Defendant said he was not in the vicinity at the time of the incident."
+		}
+    ]
+ }
+}
+</code></pre></div><div class="tab-pane" id="routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea_post_response"><h2>HTTP status code <a href="http://httpstatus.es/202" target="_blank">202</a></h2><p>The request has been accepted for processing, but the processing has not been completed</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+   "UUID":"5f347ceb-b7d2-478d-bc7a-d2e0c5a937a3"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Provided information is not schema compliant.</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Invalid user data",
+  "stackTrace":""uk.gov.moj.uis.cst.write.app.exceptions.JsonSchemaException: Invalid user data..."   
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Unexcepted error in the service</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Unexpected error",
+  "stackTrace":"java.lang.Exception : Something went wrong
+    .....
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:497)
+    java.lang.Thread.run(Thread.java:745)"   
+}</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="routing_cases__aggregateCaseId__defendant__id__defend" class="panel-title">/routing-cases/{aggregateCaseId}/defendant/{id}/defend</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post to confirm defence is ready to proceed to court</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_routing_cases__aggregateCaseId__defendant__id__defend"><span class="parent"></span>/routing-cases/{aggregateCaseId}/defendant/{id}/defend</a> <span class="methods"><a href="#routing_cases__aggregateCaseId__defendant__id__defend_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_routing_cases__aggregateCaseId__defendant__id__defend" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#routing_cases__aggregateCaseId__defendant__id__defend_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="routing_cases__aggregateCaseId__defendant__id__defend_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/routing-cases/{aggregateCaseId}/defendant/{id}/defend</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#routing_cases__aggregateCaseId__defendant__id__defend_post_request" data-toggle="tab">Request</a></li><li><a href="#routing_cases__aggregateCaseId__defendant__id__defend_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="routing_cases__aggregateCaseId__defendant__id__defend_post_request"><h3>URI Parameters</h3><ul><li><strong>aggregateCaseId</strong>: <em>required (string)</em></li><li><strong>id</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Accept</strong>: <em>(string)</em><p>Content negotiation</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the request body</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Accept-Encoding</strong>: <em>(string)</em><p>Particularly for indicating gzip compression</p></li><li><strong>Authorization</strong>: <em>(string)</em><p>HTTP Authorization controls</p><p><strong>Example</strong>:</p><pre>Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</pre></li><li><strong>CP-Version</strong>: <em>(string)</em><p>Platform service sub-version indicator, in the form of a date YYYY-MM-DD.</p><p><strong>Example</strong>:</p><pre>Thu Aug 27 2015 01:00:00 GMT+0100 (BST)</pre></li><li><strong>X-UID</strong>: <em>(string)</em><p>IdAM User ID.</p><p><strong>Example</strong>:</p><pre>8fd7b660-b755-413c-8073-0648baf312a6</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "submitted": {
+      "id": "/submitted",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "submitted"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": "19",
+  "version": 12,
+  "submitted": true
+}
+</code></pre></div><div class="tab-pane" id="routing_cases__aggregateCaseId__defendant__id__defend_post_response"><h2>HTTP status code <a href="http://httpstatus.es/202" target="_blank">202</a></h2><p>The request has been accepted for processing, but the processing has not been completed</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+   "UUID":"5f347ceb-b7d2-478d-bc7a-d2e0c5a937a3"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Provided information is not schema compliant.</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Invalid user data",
+  "stackTrace":""uk.gov.moj.uis.cst.write.app.exceptions.JsonSchemaException: Invalid user data..."   
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Unexcepted error in the service</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Unexpected error",
+  "stackTrace":"java.lang.Exception : Something went wrong
+    .....
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:497)
+    java.lang.Thread.run(Thread.java:745)"   
+}</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="routing_cases__aggregateCaseId__prosecute" class="panel-title">/routing-cases/{aggregateCaseId}/prosecute</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post to confirm prosecution is ready to proceed to court</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_routing_cases__aggregateCaseId__prosecute"><span class="parent"></span>/routing-cases/{aggregateCaseId}/prosecute</a> <span class="methods"><a href="#routing_cases__aggregateCaseId__prosecute_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_routing_cases__aggregateCaseId__prosecute" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#routing_cases__aggregateCaseId__prosecute_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="routing_cases__aggregateCaseId__prosecute_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/routing-cases/{aggregateCaseId}/prosecute</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#routing_cases__aggregateCaseId__prosecute_post_request" data-toggle="tab">Request</a></li><li><a href="#routing_cases__aggregateCaseId__prosecute_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="routing_cases__aggregateCaseId__prosecute_post_request"><h3>URI Parameters</h3><ul><li><strong>aggregateCaseId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Accept</strong>: <em>(string)</em><p>Content negotiation</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the request body</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Accept-Encoding</strong>: <em>(string)</em><p>Particularly for indicating gzip compression</p></li><li><strong>Authorization</strong>: <em>(string)</em><p>HTTP Authorization controls</p><p><strong>Example</strong>:</p><pre>Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</pre></li><li><strong>CP-Version</strong>: <em>(string)</em><p>Platform service sub-version indicator, in the form of a date YYYY-MM-DD.</p><p><strong>Example</strong>:</p><pre>Thu Aug 27 2015 01:00:00 GMT+0100 (BST)</pre></li><li><strong>X-UID</strong>: <em>(string)</em><p>IdAM User ID.</p><p><strong>Example</strong>:</p><pre>8fd7b660-b755-413c-8073-0648baf312a6</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "submitted": {
+      "id": "/submitted",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "submitted"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": "19",
+  "version": 12,
+  "submitted": true
+}</code></pre></div><div class="tab-pane" id="routing_cases__aggregateCaseId__prosecute_post_response"><h2>HTTP status code <a href="http://httpstatus.es/202" target="_blank">202</a></h2><p>The request has been accepted for processing, but the processing has not been completed</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+   "UUID":"5f347ceb-b7d2-478d-bc7a-d2e0c5a937a3"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Provided information is not schema compliant.</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Invalid user data",
+  "stackTrace":""uk.gov.moj.uis.cst.write.app.exceptions.JsonSchemaException: Invalid user data..."   
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Unexcepted error in the service</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Unexpected error",
+  "stackTrace":"java.lang.Exception : Something went wrong
+    .....
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:497)
+    java.lang.Thread.run(Thread.java:745)"   
+}</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="routing_cases__aggregateCaseId__accept" class="panel-title">/routing-cases/{aggregateCaseId}/accept</h3></div><div class="panel-body"><div class="top-resource-description"><p>Post to confirm legal advisor accepts the case information</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_routing_cases__aggregateCaseId__accept"><span class="parent"></span>/routing-cases/{aggregateCaseId}/accept</a> <span class="methods"><a href="#routing_cases__aggregateCaseId__accept_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_routing_cases__aggregateCaseId__accept" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#routing_cases__aggregateCaseId__accept_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="routing_cases__aggregateCaseId__accept_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/routing-cases/{aggregateCaseId}/accept</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#routing_cases__aggregateCaseId__accept_post_request" data-toggle="tab">Request</a></li><li><a href="#routing_cases__aggregateCaseId__accept_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="routing_cases__aggregateCaseId__accept_post_request"><h3>URI Parameters</h3><ul><li><strong>aggregateCaseId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Accept</strong>: <em>(string)</em><p>Content negotiation</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the request body</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Accept-Encoding</strong>: <em>(string)</em><p>Particularly for indicating gzip compression</p></li><li><strong>Authorization</strong>: <em>(string)</em><p>HTTP Authorization controls</p><p><strong>Example</strong>:</p><pre>Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</pre></li><li><strong>CP-Version</strong>: <em>(string)</em><p>Platform service sub-version indicator, in the form of a date YYYY-MM-DD.</p><p><strong>Example</strong>:</p><pre>Thu Aug 27 2015 01:00:00 GMT+0100 (BST)</pre></li><li><strong>X-UID</strong>: <em>(string)</em><p>IdAM User ID.</p><p><strong>Example</strong>:</p><pre>8fd7b660-b755-413c-8073-0648baf312a6</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "submitted": {
+      "id": "/submitted",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "submitted"
+  ]
+}
+
+</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": "19",
+  "version": 12,
+  "accepted": true
+}
+</code></pre></div><div class="tab-pane" id="routing_cases__aggregateCaseId__accept_post_response"><h2>HTTP status code <a href="http://httpstatus.es/202" target="_blank">202</a></h2><p>The request has been accepted for processing, but the processing has not been completed</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+   "UUID":"5f347ceb-b7d2-478d-bc7a-d2e0c5a937a3"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Provided information is not schema compliant.</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Invalid user data",
+  "stackTrace":""uk.gov.moj.uis.cst.write.app.exceptions.JsonSchemaException: Invalid user data..."   
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Unexcepted error in the service</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Unexpected error",
+  "stackTrace":"java.lang.Exception : Something went wrong
+    .....
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:497)
+    java.lang.Thread.run(Thread.java:745)"   
+}</code></pre></div></div></div></div></div></div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h3 id="routing_cases__aggregateCaseId__issuedirections" class="panel-title">/routing-cases/{aggregateCaseId}/issuedirections</h3></div><div class="panel-body"><div class="top-resource-description"><p>Legal advisor poste to issue directions against the case</p></div><div class="panel-group"><div class="panel panel-white"><div class="panel-heading"><h4 class="panel-title"><a class="collapsed" data-toggle="collapse" href="#panel_routing_cases__aggregateCaseId__issuedirections"><span class="parent"></span>/routing-cases/{aggregateCaseId}/issuedirections</a> <span class="methods"><a href="#routing_cases__aggregateCaseId__issuedirections_post"><span class="badge badge_post">post</span></a></span></h4></div><div id="panel_routing_cases__aggregateCaseId__issuedirections" class="panel-collapse collapse"><div class="panel-body"><div class="list-group"><div onclick="window.location.href = '#routing_cases__aggregateCaseId__issuedirections_post'" class="list-group-item"><span class="badge badge_post">post</span><div class="method_description"></div><div class="clearfix"></div></div></div></div></div><div class="modal fade" tabindex="0" id="routing_cases__aggregateCaseId__issuedirections_post"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title" id="myModalLabel"><span class="badge badge_post">post</span> <span class="parent"></span>/routing-cases/{aggregateCaseId}/issuedirections</h4></div><div class="modal-body"><ul class="nav nav-tabs"><li class="active"><a href="#routing_cases__aggregateCaseId__issuedirections_post_request" data-toggle="tab">Request</a></li><li><a href="#routing_cases__aggregateCaseId__issuedirections_post_response" data-toggle="tab">Response</a></li></ul><div class="tab-content"><div class="tab-pane active" id="routing_cases__aggregateCaseId__issuedirections_post_request"><h3>URI Parameters</h3><ul><li><strong>aggregateCaseId</strong>: <em>required (string)</em></li></ul><h3>Headers</h3><ul><li><strong>Accept</strong>: <em>(string)</em><p>Content negotiation</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the request body</p><p><strong>Example</strong>:</p><pre>application/json</pre></li><li><strong>Accept-Encoding</strong>: <em>(string)</em><p>Particularly for indicating gzip compression</p></li><li><strong>Authorization</strong>: <em>(string)</em><p>HTTP Authorization controls</p><p><strong>Example</strong>:</p><pre>Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==</pre></li><li><strong>CP-Version</strong>: <em>(string)</em><p>Platform service sub-version indicator, in the form of a date YYYY-MM-DD.</p><p><strong>Example</strong>:</p><pre>Thu Aug 27 2015 01:00:00 GMT+0100 (BST)</pre></li><li><strong>X-UID</strong>: <em>(string)</em><p>IdAM User ID.</p><p><strong>Example</strong>:</p><pre>8fd7b660-b755-413c-8073-0648baf312a6</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Schema</strong>:</p><pre><code>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "",
+  "type": "object",
+  "properties": {
+    "id": {
+      "id": "/id",
+      "type": "string"
+    },
+    "version": {
+      "id": "/version",
+      "type": "integer"
+    },
+    "directions": {
+      "id": "/directions",
+      "type": "array",
+      "items": [
+        {
+          "id": "/directions/0",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "/directions/0/id",
+              "type": "string"
+            },
+            "status": {
+              "id": "/directions/0/status",
+              "type": "string"
+            }
+          }
+        },
+        {
+          "id": "/directions/1",
+          "type": "object",
+          "properties": {
+            "id": {
+              "id": "/directions/1/id",
+              "type": "string"
+            },
+            "status": {
+              "id": "/directions/1/status",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "directions"
+  ]
+}</code></pre><p><strong>Example</strong>:</p><pre><code>{
+  "id": "19",
+  "version": 12,
+  "directions": [
+    {
+      "id": "DIR-123",
+      "status": "ISSUED"
+    },
+    {
+      "id": "DIR-124",
+      "status": "ISSUED"
+    }
+  ]
+}</code></pre></div><div class="tab-pane" id="routing_cases__aggregateCaseId__issuedirections_post_response"><h2>HTTP status code <a href="http://httpstatus.es/202" target="_blank">202</a></h2><p>The request has been accepted for processing, but the processing has not been completed</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+   "UUID":"5f347ceb-b7d2-478d-bc7a-d2e0c5a937a3"
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2><p>Provided information is not schema compliant.</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Invalid user data",
+  "stackTrace":""uk.gov.moj.uis.cst.write.app.exceptions.JsonSchemaException: Invalid user data..."   
+}</code></pre><h2>HTTP status code <a href="http://httpstatus.es/500" target="_blank">500</a></h2><p>Unexcepted error in the service</p><h3>Headers</h3><ul><li><strong>Content-Type</strong>: <em>(string)</em><p>MIME Type of the response body</p><p><strong>Example</strong>:</p><pre>text/plain; charset=utf-8</pre></li><li><strong>Content-Encoding</strong>: <em>(string)</em><p>Indicates encoding, mostly for gzip compression</p><p><strong>Example</strong>:</p><pre>gzip</pre></li></ul><h3>Body</h3><p><strong>Type: application/json</strong></p><p><strong>Example</strong>:</p><pre><code>{
+  "errorType": "Unexpected error",
+  "stackTrace":"java.lang.Exception : Something went wrong
+    .....
+    sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    java.lang.reflect.Method.invoke(Method.java:497)
+    java.lang.Thread.run(Thread.java:745)"   
+}</code></pre></div></div></div></div></div></div></div></div></div></div></div><div class="col-md-3"><div id="sidebar" class="hidden-print affix" role="complementary"><ul class="nav nav-pills nav-stacked"><li><a href="#routing_cases">/routing-cases</a></li><li><a href="#routing_cases__aggregateCaseId__defendants__defendantId__charges__chargeId__indicate_plea">/routing-cases/{aggregateCaseId}/defendants/{defendantId}/charges/{chargeId}/indicate-plea</a></li><li><a href="#routing_cases__aggregateCaseId__defendant__id__defend">/routing-cases/{aggregateCaseId}/defendant/{id}/defend</a></li><li><a href="#routing_cases__aggregateCaseId__prosecute">/routing-cases/{aggregateCaseId}/prosecute</a></li><li><a href="#routing_cases__aggregateCaseId__accept">/routing-cases/{aggregateCaseId}/accept</a></li><li><a href="#routing_cases__aggregateCaseId__issuedirections">/routing-cases/{aggregateCaseId}/issuedirections</a></li></ul></div></div></div></div></body></html>

@@ -1,0 +1,23 @@
+{
+ "id":"dd",
+ "version":1,                      
+ "chargingCase":
+                { "caseId":"1001",
+                   "urn":"#1001",
+                    "suspects": [
+						{ 
+                            "suspectId":1,
+                            "firstName":"mike",
+                            "lastName":"smith",
+                            "dateOfBirth":"Nov 10, 1984 12:00:00 AM",
+                            "proposedCharges": [
+					               {
+					                "code":{
+					                		"chargeCodeStr":"DDCode"
+					                		},
+					                "chargeDescription":"Person is guilty"
+					               }
+             				]                             
+                        }]                     
+                }
+} 

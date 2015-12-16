@@ -1,0 +1,95 @@
+#%RAML 0.8
+title: Defence Portal - CST write services API
+version: 1.0
+mediaType: appplication/json
+protocols: [ HTTP, HTTPS ]
+      
+documentation: 
+        - title:  Overview - Defence portal CST write services.
+          content: Defence portal all cst write services.
+          
+baseUri: /dpp_cst_write/rest/1.0/cst/dpp/defendant
+
+
+/unrepresented/case:
+  displayName: Create unrepresented defendant case.
+  post:
+      description:  Create an unrepresented defendant case which is received from PCC.
+      body:
+        application/json:
+            example: 
+             !include json-examples/Unrepresented_Defendant_Case.json          
+             
+            schema: 
+             !include schema-examples/Unrepresented_Defendant_Case_Schema.json
+              
+      responses:
+            500:
+                description: Internal Server Error
+            401:
+                description: Unauthorized. Invalid user or session.                    
+            202:
+                description: OK        
+                body:
+                  application/json: 
+                      example: |
+                        {
+                          success: "true"
+                        }    
+                        
+
+/represented/case:
+  displayName: Create represented defendant case.
+  post:
+      description:  Create a represented defendant case which is received from PCC.
+      body:
+        application/json:
+            example: 
+             !include json-examples/Represented_Defendant_Case.json           
+            schema: 
+             !include schema-examples/Represented_Defendant_Case_Schema.json
+              
+      responses:
+            500:
+                description: Internal Server Error
+            401:
+                description: Unauthorized. Invalid user or session.                    
+            202:
+                description: OK        
+                body:
+                  application/json: 
+                      example: |
+                        {
+                          success: "true"
+                        }  
+                                                                    
+/attach/case:
+  displayName: Attach a case to the user
+  post:
+      description: Attach the case to the user
+      body:
+        application/json:
+            example: 
+             !include json-examples/Attach_Case.json           
+            schema: 
+             !include schema-examples/Attach_Case_Schema.json 
+      headers:
+          name:
+            type: string
+            description: CPPUI (The logedin user id).
+            example: 0ad7247a-257e-4df9-bab8-0a3989a2d3d6201576
+            required: true 
+              
+      responses:
+            500:
+                description: Internal Server Error
+            401:
+                description: Unauthorized. Invalid user or session.                    
+            202:
+                description: OK        
+                body:
+                  application/json: 
+                      example: |
+                        {
+                          success: "true"
+                        }

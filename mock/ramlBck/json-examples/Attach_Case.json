@@ -1,0 +1,39 @@
+{  
+  
+   "id":"1000345",
+   "user":{  
+      "userId":"11",
+      "title":"Mr",
+      "givenName":"Doe",
+      "middleName":"K",
+      "surname":"John",
+      "displayName":"Test1 TestS",
+      "registeredEmail":"test@test.com",
+      "activeFlag":"true",
+      "welshLanguagePreference":"true",
+      "creatorId":"08/02/2015",
+      "organisation":{  
+         "id":"11",
+         "name":"Testing....",
+		 "email":"test@test.com",
+		 "type":"TYPE",
+		 "phoneNumber":"123456",
+         "address":{  
+            "addressLine1":"1",
+            "addressLine2":"St Johns walk",
+            "addressLine3":"Southside",
+            "addressLine4":"Birmingham",
+            "addressLine5":"West Midland",
+            "postalCode":"B5 4JJ"
+         }
+      }
+   },
+   "defendant":{  
+      "foreName":"Test",
+      "lastName":"Do",
+      "dateOfBirth":"10/10/1981"
+   },
+   "caseIdentity":{  
+      "urn":"URN12993"
+   }
+}

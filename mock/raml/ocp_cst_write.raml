@@ -1,0 +1,123 @@
+#%RAML 0.8
+title: Online Case Progression Service - Write
+baseUri: http://localhost:8080/ocp-write-cst/rest
+version: v0.1
+mediaType: application/json
+protocols: [ HTTP, HTTPS ]
+
+documentation: 
+  - title: Category
+    content : Consumer Service Tier
+  - title: Status
+    content : In development
+  - title: Description
+    content: |
+       Welcome to Online Case Progression Service API Documentation. This API allows you to send commands to be handled by a command handler (DOT) which will in turn generate events to apply to the domain model, store the event in an event store and publish the event to an event lister to be read.
+       
+  - title: Context
+    content : Provides data for case management screens for defence and prosecution
+              Supports the Steel Thread screenflow of a *Defence Solicitor* viewing the details of the case and submitting an indicated plea and confirming they are ok for the case to move to court.
+              The *Prosecution* then views the case and signals they are ok to proceed to court.
+              The *Legal Advisor* then reviews the cases and issues a set of directions against the case.
+
+  - title: Security Policy
+    content: TBC
+  - title: Where Used
+    content: https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2
+  - title: Source Code
+    content : https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2
+  - title: Artefacts
+    content: https://libraries.dev2.cloud.local/artifactory/wars-local/OCP
+  - title: Designs
+    content: https://triadmoj.atlassian.net/wiki/display/CPP/CQRS+Framework
+  - title: Test Cases
+    content: Pointers to the relevant Test Cases, etc. for the Service
+
+/routing-cases:
+  description: | 
+    Post to this entry point to create a case
+  post:
+    is: []
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+      
+        schema: !include json-schemas/create-routing-case.json
+        example: !include json-examples/create-routing-case.json
+
+
+
+/routing-cases/{aggregateCaseId}/defendants/{defendantId}/charges/{chargeId}/indicate-plea:
+  description: | 
+    Post to indicate a plea against a defendent charge
+  post:
+    is: []
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+      
+        schema: !include json-schemas/indicate-plea.json
+        example: !include json-examples/indicate-plea.json
+
+
+/routing-cases/{aggregateCaseId}/defendant/{id}/defend:
+  description: | 
+    Post to confirm defence is ready to proceed to court
+  post:
+    is: []
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+      
+        schema: !include json-schemas/defence-submits-case-to-court.json
+        example: !include json-examples/defence-submits-case-to-court.json
+        
+        
+
+/routing-cases/{aggregateCaseId}/prosecute:
+  description: | 
+    Post to confirm prosecution is ready to proceed to court
+  post:
+    is: []
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+      
+        schema: !include json-schemas/prosecution-submits-case-to-court.json
+        example: !include json-examples/prosecution-submits-case-to-court.json
+
+/routing-cases/{aggregateCaseId}/accept:
+  description: | 
+    Post to confirm legal advisor accepts the case information
+  post:
+    is: []
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+      
+        schema: !include json-schemas/accept.json
+        example: !include json-examples/accept.json
+        
+/routing-cases/{aggregateCaseId}/issuedirections:
+  description: | 
+    Legal advisor poste to issue directions against the case
+  post:
+    is: []
+    headers:
+      Content-Type:
+        type: string
+        example: application/json
+    body:
+      
+        schema: !include json-schemas/IssueDirectionsAgainstCaseCommand.json
+        example: !include json-examples/IssueDirectionsAgainstCaseCommand.json

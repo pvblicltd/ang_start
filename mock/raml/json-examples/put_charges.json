@@ -1,0 +1,24 @@
+{
+  "id": "064a09a9-377f-4c89-b185-94ad87ee95c2",
+  "version": 0,
+  "urn": "#1001",
+  "suspects": [
+    {
+      "id": 123,
+      "firstName": "OLIVER",
+      "lastName": "smith",
+      "address": "London",
+      "dateOfBirth": "1996-10-17",
+      "proposedCharges": [],
+      "putCharges": [
+        {
+		  "putChargeDate": "2015-10-26",
+          "code": "DDCode",
+          "description": "Person is guilty"
+        }
+      ]
+    }
+  ]
+}
+
+

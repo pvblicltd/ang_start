@@ -1,0 +1,142 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "personId": {
+      "description": "The person (suspect) details",
+      "type": "string"
+    },
+    "asn": {
+      "description": "The asn",
+      "type": "string"
+    },
+    "bailConditions": {
+      "description": "The bail condition",
+      "type": "string"
+    },
+    "bailDate": {
+      "description": "The bail date",
+      "type": "array",
+      "items": [
+        {
+          "description": "The bail year",
+          "type": "integer"
+        },
+        {
+          "description": "The bail month",
+          "type": "integer"
+        },
+        {
+          "description": "The bail day",
+          "type": "integer"
+        }
+      ]
+    },
+    "policeRemandStatus": {
+      "description": "The police remand status",
+      "type": "string"
+    },
+    "charges": {
+      "description": "Charges",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "description": "The cjs code",
+            "type": "string"
+          },
+          "description": {
+            "description": "The charge descriptions",
+            "type": "string"
+          },
+          "status": {
+            "description": "The charge status (Proposed or Authorised)",
+            "type": "string"
+          },
+          "categoryType": {
+            "description": "The charge category type",
+            "type": "string"
+          },
+          "fromDate": {
+            "description": "The offence start date",
+            "type": "array",
+            "items": [
+              {
+                "description": "The offence start year",
+                "type": "integer"
+              },
+              {
+                "description": "The offence start month",
+                "type": "integer"
+              },
+              {
+                "description": "The offence start day",
+                "type": "integer"
+              }
+            ]
+          },
+          "toDate": {
+            "description": "The offence end date",
+            "type": "array",
+            "items": [
+              {
+                "description": "The offence end year",
+                "type": "integer"
+              },
+              {
+                "description": "The offence end month",
+                "type": "integer"
+              },
+              {
+                "description": "The offence end day",
+                "type": "integer"
+              }
+            ]
+          },
+          "particularClassification": {
+            "description": "The particular classification",
+            "type": "string"
+          },
+          "particularLocation": {
+            "description": "The particular location",
+            "type": "object",
+            "properties": {
+              "address1": {
+                "description": "The location address line 1",
+                "type": "string"
+              },
+              "address2": {
+                "description": "The location address line 2",
+                "type": "string"
+              },
+              "address3": {
+                "description": "The location address line 3",
+                "type": "string"
+              },
+              "address4": {
+                "description": "The location address line 4",
+                "type": "string"
+              },
+              "postCode": {
+                "description": "The location address postcode",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "personId",
+    "asn",
+    "bailConditions",
+    "bailDate",
+    "policeRemandStatus",
+    "charges"
+  ]
+}

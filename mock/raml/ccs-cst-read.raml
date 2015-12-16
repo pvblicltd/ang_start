@@ -1,0 +1,46 @@
+#%RAML 0.8
+
+title: Scheduling - CST Read Services API
+version: 1.0
+baseUri: http://localhost:8888/ccs-cst-read
+mediaType: appplication/json
+protocols: [ HTTP, HTTPS ]
+      
+documentation: 
+        - title:  Overview - Scheduling CST read services
+          content: List of cst read services api.
+                    
+/casehearing/{hearingid}:
+    description: Find an unrepresented defendant case.
+          
+    get:
+        description: Search for a hearing created for a case
+        responses:
+          500:
+            description: Internal Server Error
+            body:
+              application/json:
+                example: | 
+                  {
+                    "name": "new"
+                  }
+                schema: | 
+                  {}
+          400:
+            description: Invalid search criteria
+            body:
+              application/json:
+                example: | 
+                  {
+                    "name": "new"
+                  }
+                schema: | 
+                  {}
+          200:
+            description: OK
+            body:
+              application/json:
+                example: !include json-examples/hearing-found.json
+                schema: !include json-schemas/hearing-found.json
+                
+                

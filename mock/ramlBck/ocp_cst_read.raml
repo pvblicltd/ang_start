@@ -1,0 +1,79 @@
+#%RAML 0.8
+title: OCP Read API (CST)
+baseUri: http://localhost:8080/ocp-cst-read/rest
+version: v0.1
+mediaType: application/json
+protocols: [ HTTP, HTTPS ]
+
+documentation: 
+  - title: Category
+    content : Consumer Service Tier
+  - title: Status
+    content : In development
+  - title: Description
+    content: |
+       Welcome to Online Case Progression Service API Documentation. This API allows you to send commands to be handled by a command handler (DOT) which will in turn generate events to apply to the domain model, store the event in an event store and publish the event to an event lister to be read.
+       
+  - title: Context
+    content : Provides data for case management screens for defence and prosecution
+  - title: Security Policy
+    content: TBC
+  - title: Where Used
+    content: https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2
+  - title: Source Code
+    content : https://codereview.dev2.cloud.local/#/admin/projects/cpp_ocp2
+  - title: Artefacts
+    content: https://libraries.dev2.cloud.local/artifactory/wars-local/OCP
+  - title: Designs
+    content: https://triadmoj.atlassian.net/wiki/display/CPP/CQRS+Framework
+  - title: Test Cases
+    content: Pointers to the relevant Test Cases, etc. for the Service
+
+/routing-cases:
+  description: Get list of all case defendant information
+  get:
+    description: Get list of all case defendant information
+    responses:
+      404:
+           description: The specified case data could not be found.
+      200:
+        body:
+            schema: !include json-schemas/read-case-list.json
+            example: !include json-examples/read-case-list.json
+
+
+/routing-cases/{caseurn}:
+  description: Get case defendant information
+  get:
+    description: Get case defendant information
+    responses:
+      404:
+           description: The specified case data could not be found.
+      200:
+        body:
+            schema: !include json-schemas/case-defendant-details.json
+            example: !include json-examples/case-defendant-details.json
+
+/routing-cases/{caseurn}/defendants/{defendantId}/charges/{chargeId}/pleas:
+  description: Get case defendant information
+  get:
+    description: Get case defendant information
+    responses:
+      404:
+           description: The specified case data could not be found.
+      200:
+        body:
+            schema: !include json-schemas/case-defendant-details.json
+            example: !include json-examples/case-defendant-details.json
+            
+/routing-cases/{caseurn}/unissued-directions:
+  description: Get the directions for a case - only to be used by legal advisor before they issue the directions to the defence
+  get:
+    description: Get case defendant information
+    responses:
+      404:
+           description: The specified case data could not be found.
+      200:
+        body:
+            schema: !include json-schemas/directions.json
+            example: !include json-examples/directions.json

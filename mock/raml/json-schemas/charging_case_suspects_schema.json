@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "chargingCase": {
+      "type": "object",
+      "properties": {
+        "caseId": {
+          "type": "string"
+        },
+        "urn": {
+          "type": "string"
+        },
+        "suspects": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "suspectId": {
+                  "type": "integer"
+                },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "dateOfBirth": {
+                  "type": "string"
+                },
+                "proposedCharges": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "object",
+                          "properties": {
+                            "chargeCodeStr": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "chargeDescription": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "chargingCase"
+  ]
+}

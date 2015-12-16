@@ -1,0 +1,161 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The aggregate id",
+      "type": "string"
+    },
+    "user": {
+      "description": "The user object",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "description": "The user id",
+          "type": "string"
+        },
+        "title": {
+          "description": "The user title", 
+          "type": "string"
+        },
+        "givenName": {
+          "description": "The user given name",
+          "type": "string"
+        },
+        "middleName": {
+          "description": "The user middle name",
+          "type": "string"
+        },
+        "surname": {
+          "description": "The user surname",
+          "type": "string"
+        },
+        "displayName": {
+          "description": "The user display name",
+          "type": "string"
+        },
+        "registeredEmail": {
+          "description": "The user registered email",
+          "type": "string"
+        },
+        "activeFlag": {
+          "description": "The user active flag",
+          "type": "boolean"
+        },
+        "welshLanguagePreference": {
+          "description": "The user welsh language preference",
+          "type": "boolean"
+        },
+        "creatorId": {
+          "description": "The user creator id",
+          "type": "string"
+        },
+        "organisation": {
+          "description": "Organisation details",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "The organisation unique id",
+              "type": "string"
+            },
+            "name": {
+              "description": "The organisation name",
+              "type": "string"
+            },
+            "email": {
+              "description": "The organisation email",
+              "type": "string"
+            },
+            "type": {
+              "description": "The organisation type",
+              "type": "string"
+            },
+            "phoneNumber": {
+              "description": "The organisation phone number",
+              "type": "string"
+            },
+            "address": {
+              "description": "The organisation address",
+              "type": "object",
+              "properties": {
+                "addressLine1": {
+                  "description": "The organisation Address 1",
+                  "type": "string"
+                },
+                "addressLine2": {
+                  "description": "The organisation Address 2",
+                  "type": "string"
+                },
+                "addressLine3": {
+                  "description": "The organisation Address 3",
+                  "type": "string"
+                },
+                "addressLine4": {
+                  "description": "The organisation Address 4",
+                  "type": "string"
+                },
+                "addressLine5": {
+                  "description": "The organisation Address 5",
+                  "type": "string"
+                },
+                "postalCode": {
+                  "description": "The organisation postal code",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "defendant": {
+      "description": "The defendant object",
+      "type": "object",
+      "properties": {
+        "foreName": {
+          "description": "Defendant fore name",
+          "type": "string",
+          "maxLength": "11",
+          "minLength": "11",
+          "pattern": "^[(0-9){2}(A-Za-z){1-2}(0-9){7-8}]",
+          "required": "true"
+        },
+        "lastName": {
+          "description": "Defendant last name",
+          "type": "string",
+          "maxLength": "11",
+          "minLength": "11",
+          "pattern": "^[(0-9){2}(A-Za-z){1-2}(0-9){7-8}]",
+          "required": "true"
+        },
+        "dateOfBirth": {
+          "description": "Defendant date of birth",
+          "type": "string",
+          "maxLength": "10",
+          "minLength": "10",
+          "pattern": "yyyy-MM-dd",
+          "required": "true"
+        }
+      }
+    },
+    "caseIdentity": {
+      "description": "The defendant case identity Object",
+      "type": "object",
+      "properties": {
+        "urn": {
+          "description": "The defendant URN",
+          "type": "string",
+          "maxLength": "10",
+          "minLength": "10",
+          "pattern": "yyyy-MM-dd",
+          "required": "true"
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "user",
+    "defendant",
+    "caseIdentity"
+  ]
+}

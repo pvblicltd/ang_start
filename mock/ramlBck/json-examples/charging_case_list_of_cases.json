@@ -1,0 +1,16 @@
+{
+    "chargingCase": [
+        {
+            "caseId": 2,
+            "urn": "#1001"
+        },
+        {
+            "caseId": 2,
+            "urn": "#1002"
+        },
+        {
+            "caseId": 3,
+            "urn": "#1003"
+        }
+    ]
+}

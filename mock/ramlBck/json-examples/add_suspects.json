@@ -1,0 +1,38 @@
+{
+  "id": "7e2f843e-d639-40b3-8611-8015f3a18958",
+  "personId": "ba9a2765-e630-4d9a-923c-6b9fd29dbfc4",
+  "asn": "asn",
+  "bailConditions": "Lorem ipsum dolor sit amet",
+  "bailDate": [
+    2015,
+    2,
+    12
+  ],
+  "policeRemandStatus": "Remanded on conditional bail",
+  "charges": [
+    {
+      "code": "CJ12345",
+      "description": "Possession or acquisition of certain prohibited weapons etc",
+      "status": "Authorised",
+      "categoryType": "either way",
+      "fromDate": [
+        2015,
+        2,
+        12
+      ],
+      "toDate": [
+        2015,
+        2,
+        12
+      ],
+      "particularClassification": "Duis aute irure dolor in reprehenderit in voluptate ",
+      "particularLocation": {
+        "address1": "14 Tottenham Court Road",
+        "address2": "London",
+        "address3": "England",
+        "address4": "UK",
+        "postCode": "W1T 1JY"
+      }
+    }
+  ]
+}
