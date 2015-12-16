@@ -12,7 +12,7 @@ module.exports = function(){
         'copy-images',
         'build-css-app',
         'build-css-vendor',
-        //'build-js-app',
+        'build-js-app',
         'build-js-vendor',
         'copy-config',
         'copy-favicon',

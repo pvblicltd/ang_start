@@ -22,6 +22,14 @@
             vendorStyles: 'src/assets/styles/vendor.less',
             imagesSrc: 'src/images/**',
             bowerFiles: '**/*.js',
+            distJsFiles: [
+              'src/**/components/**/*.js',
+              'src/**/routes/**/*.js',
+              '!src/app/routes/routes.module.js',
+              '!src/**/*.spec.js',
+              '!src/**/*.prot.js',
+              '!src/**/*.page.js'
+            ],
             allLessFiles: [
               'src/**/*.less',
               '!src/styles/vendor.less'
@@ -40,12 +48,19 @@
             distVendor: 'dist/vendor',
             distLanguages: 'dist/languages',
             allLangualgesFiles: 'src/app/**/*.lang.json',
-            allJs: ['app/**/*.js', 'external/**/*.js', '!app/**/*.controller.js'],
+            allJs: [
+              'app/app.bootstrap.js',
+              'app/app.module.js',
+              'app/routes/**/*.js',
+              'app/config/*.js',
+              'external/**/*.js'
+            ],
             allJsFilesApartFromTest: [
-              'app/**/*.js',
+              'app/app.bootstrap.js',
+              'app/app.module.js',
+              'app/routes/**/*.js',
               'external/**/*.js',
               'app/config/*.js',
-               '!app/**/*.controller.js',
               '!**/*.spec.js',
               '!**/*.prot.js',
               '!**/*.page.js'
@@ -55,7 +70,7 @@
             fontFiles: '**/*.{otf,eot,svg,ttf,woff,woff2}',
             cppAssets: 'bower_components/cpp-ui/dist/assets/**/*',
             bowerCss: 'bower_components/**/*.css',
-            appProd: '**/app*.*',
+            appProd: '**/app-*.min.{js,css}',
             indexHtml: 'src/index.html',
             allHtml: '**/*.html',
             vendorCss: '**/vendor*.css',
