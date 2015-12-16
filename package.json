@@ -82,13 +82,9 @@
   },
   "config": {
     "pre-git": {
-      "commit-msg": [ ],
-      "pre-commit": [ ],
       "pre-push": [
         "gulp check-commit --verbose"
-      ],
-      "post-commit": [ ],
-      "post-merge": [ ]
+      ]
     }
   }
 }
