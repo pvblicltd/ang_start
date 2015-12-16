@@ -2,11 +2,33 @@
 
 var gulp = require('gulp'),
     del = require('del'),
+    fs = require('fs'),
+    path = require('path'),
+    profile = require(process.cwd() + '/profile.js')(),
     $ = require('gulp-load-plugins')({ lazy: true });
 
 module.exports = function (config, log) {
 
-    gulp.task('get-raml', ['clean-raml'], processRaml);    
+    gulp.task('git-cppapi', getApiRepo);
+    gulp.task('get-raml', ['clean-raml'], processRaml);
+
+    function getApiRepo() {
+
+        if (profile.hasMissingData()) {
+
+            log('Please complete your git access data in the profile.js file...');
+            return;
+        }
+
+        var url = 'ssh://' + profile.data.username + '@coderepo.dev2.cloud.local:29418/cppapi';
+
+        if (!fs.existsSync(path.join(process.cwd(), '/cppapi2'))) {
+
+            $.git.clone(url, { args: './cppapi2' }, function (err) {
+                if (err) throw err;
+            });
+        }
+    }
 
     function processRaml() {
 
