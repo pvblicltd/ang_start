@@ -4,7 +4,10 @@
 dist/
 bower_components/
 reports/
-.karma.conf.js
+
+# CPPAPI Raml Repo
+cppapi/
+.gitmodules
 
 # Node Specifics
 node_modules
