@@ -40,7 +40,7 @@ module.exports = function (config, log) {
 
             'cppapi/ocp/cst/**/*',
             '!cppapi/ocp/cst/traits{,/**}',
-            
+
             'cppapi/pcc/cst/**/*',
             '!cppapi/pcc/cst/traits{,/**}',
 
@@ -55,4 +55,4 @@ module.exports = function (config, log) {
             .src(sourcePaths)
             .pipe(gulp.dest(config.raml));
     }
-}
+};

@@ -3,17 +3,17 @@
 var del  = require('del');
 var gulp = require('gulp');
 
-module.exports = function(config, log){
+module.exports = function (config, log){
 
     // remove the /dist folder
     gulp.task('clean-dist', function (done) {
-        var files = [].concat(config.build_dir)
+        var files = [].concat(config.build_dir);
         clean(files, done);
     });
 
     // remove the /mock/raml folder
     gulp.task('clean-raml', function (done) {
-        var files = [].concat(config.raml)
+        var files = [].concat(config.raml);
         clean(files, done);
     });
 

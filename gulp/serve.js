@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 module.exports = function (config, log) {
     gulp.task('serve', function () {
         var port = 9009,
-          host = '127.0.0.1';
+            host = '127.0.0.1';
 
         $.connect.server({
             port: port,

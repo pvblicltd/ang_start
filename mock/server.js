@@ -16,13 +16,13 @@ var options = {
     port: port,
     path: config.raml,
     watch: true,
-    prioritizeBy:'example'
-}
+    prioritizeBy: 'example'
+};
 
 // returns created server
 var server = ramlServer(options, callback);
 
-function callback (app) {
+function callback(app) {
 
     app.use(logger('dev'));
     //app.use(errorHandler.init);
@@ -30,5 +30,5 @@ function callback (app) {
     app.listen(options.port, function () {
         console.log('The CJS Contextual Raml-Mock express server is listening on port ' + port);
     });
-};
+}
 
