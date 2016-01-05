@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({ lazy: true });
-var stylish = require('jshint-stylish');
 
 // lints javascript
 module.exports = function (config, log) {
@@ -12,7 +11,6 @@ module.exports = function (config, log) {
               level: 'AA'
           }))
           .pipe($.jshint())
-          .pipe($.jshint.reporter(stylish));
+          .pipe($.jshint.reporter('jshint-stylish', { verbose: true }));
     });
-
 };
