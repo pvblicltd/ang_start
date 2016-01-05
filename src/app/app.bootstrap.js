@@ -1,31 +1,32 @@
-(function() {
-  'use strict';
+(function () {
 
-  function fetchData() {
+    'use strict';
 
-    var initInjector = angular.injector(['ng']);
+    function fetchData() {
 
-    var $http = initInjector.get('$http');
+        var initInjector = angular.injector(['ng']);
 
-    return $http.get('./app/config/app.config.json').then(function(response) {
-      angular.module('cpp-ui-spa-master').value('globalConfig', response.data);
-      return $http.get('./app/config/routes.config.json').then(function(response) {
-        angular.module('cpp-ui-spa-master').value('routesConfig', response.data);
-      }, function(errorResponse) {
-        // Handle error case
-        console.log('Error on loading routes:', errorResponse);
-      });
-    }, function(errorResponse) {
-      // Handle error case
-      console.log('Error on bootstrapping:', errorResponse);
-    });
-  }
+        var $http = initInjector.get('$http');
 
-  function bootstrapApplication() {
-    angular.element(document).ready(function() {
-      angular.bootstrap(document, ['cpp-ui-spa-master']);
-    });
-  }
+        return $http.get('./app/config/app.config.json').then(function (response) {
+            angular.module('cpp-ui-spa-master').value('globalConfig', response.data);
+            return $http.get('./app/config/routes.config.json').then(function (response) {
+                angular.module('cpp-ui-spa-master').value('routesConfig', response.data);
+            }, function (errorResponse) {
+                // Handle error case
+                console.log('Error on loading routes:', errorResponse);
+            });
+        }, function (errorResponse) {
+            // Handle error case
+            console.log('Error on bootstrapping:', errorResponse);
+        });
+    }
 
-  fetchData().then(bootstrapApplication);
+    function bootstrapApplication() {
+        angular.element(document).ready(function () {
+            angular.bootstrap(document, ['cpp-ui-spa-master']);
+        });
+    }
+
+    fetchData().then(bootstrapApplication);
 }());

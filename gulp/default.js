@@ -8,11 +8,12 @@ module.exports = function (config, log) {
 
     gulp.task('default', function (cb) {
         if ($.util.env.production) { //production build
-            runSequence('jshint', 'build', cb);
+            //runSequence('jshint', 'build', cb);
+            runSequence('lint', 'build', cb);
         }
         else { //development build
             //runSequence(['jshint', 'build'], 'serve', 'watch', cb);
-            runSequence(['jshint', 'build'], 'serve-dev', 'watch', cb);
+            runSequence(['lint', 'build'], 'serve-dev', 'watch', cb);
         }
     });
 };

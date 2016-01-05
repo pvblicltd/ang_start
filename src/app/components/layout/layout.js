@@ -1,7 +1,8 @@
 (function () {
-  'use strict';
 
-  angular
-    .module('cpp-ui-spa-master.layout', []);
+    'use strict';
+
+    angular
+        .module('cpp-ui-spa-master.layout', []);
 
 }());
